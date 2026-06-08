@@ -1,0 +1,155 @@
+
+=================================================================
+  SCENARIO 1 — PCAP only
+=================================================================
+  PCAP train columns: ['Header_Length', 'Protocol Type', 'Time_To_Live', 'Rate', 'fin_flag_number', 'syn_flag_number', 'rst_flag_number', 'psh_flag_number', 'ack_flag_number', 'ece_flag_number', 'cwr_flag_number', 'ack_count', 'syn_count', 'fin_count', 'rst_count', 'HTTP', 'HTTPS', 'DNS', 'Telnet', 'SMTP', 'SSH', 'IRC', 'TCP', 'UDP', 'DHCP', 'ARP', 'ICMP', 'IGMP', 'IPv', 'LLC', 'Tot sum', 'Min', 'Max', 'AVG', 'Std', 'Tot size', 'IAT', 'Number', 'Variance', 'MalwareFamily']
+  PCAP test  columns: ['Header_Length', 'Protocol Type', 'Time_To_Live', 'Rate', 'fin_flag_number', 'syn_flag_number', 'rst_flag_number', 'psh_flag_number', 'ack_flag_number', 'ece_flag_number', 'cwr_flag_number', 'ack_count', 'syn_count', 'fin_count', 'rst_count', 'HTTP', 'HTTPS', 'DNS', 'Telnet', 'SMTP', 'SSH', 'IRC', 'TCP', 'UDP', 'DHCP', 'ARP', 'ICMP', 'IGMP', 'IPv', 'LLC', 'Tot sum', 'Min', 'Max', 'AVG', 'Std', 'Tot size', 'IAT', 'Number', 'Variance', 'MalwareFamily']
+  Using label column: 'MalwareFamily' (encoded integers)
+  Dropped 7 redundant columns from PCAP
+  PCAP train: (1535076, 32)   test: (91129, 32)
+
+  Training Random Forest [pcap_only] ...
+  Training time: 136.5s
+  Model saved → outputs/models/rf_pcap_only.pkl
+
+  ── Results: pcap_only ──────────────────────────────────
+  Accuracy        : 0.6919
+  F1 (macro)      : 0.4636
+  F1 (weighted)   : 0.7381
+
+              precision    recall  f1-score   support
+
+      Benign       0.92      0.99      0.96     16525
+   DarkNexus       0.06      0.24      0.09      1988
+      Gafgyt       0.74      0.69      0.71      1533
+     Generic       0.06      0.35      0.11       815
+       Mirai       0.88      0.68      0.77     63962
+     Unknown       0.12      0.18      0.15      6306
+
+    accuracy                           0.69     91129
+   macro avg       0.46      0.52      0.46     91129
+weighted avg       0.81      0.69      0.74     91129
+
+  Saved: ./outputs/phase2_plots/confusion_pcap_only.png
+  Saved: ./outputs/phase2_plots/importance_pcap_only.png
+
+=================================================================
+  SCENARIO 2 — SAR only
+=================================================================
+  SAR train columns: ['cpu-load[0].usr', 'cpu-load[0].nice', 'cpu-load[0].sys', 'cpu-load[0].iowait', 'cpu-load[0].steal', 'cpu-load[0].irq', 'cpu-load[0].soft', 'cpu-load[0].guest', 'cpu-load[0].gnice', 'cpu-load[0].idle', 'cpu-load[1].cpu', 'cpu-load[1].usr', 'cpu-load[1].nice', 'cpu-load[1].sys', 'cpu-load[1].iowait', 'cpu-load[1].steal', 'cpu-load[1].irq', 'cpu-load[1].soft', 'cpu-load[1].guest', 'cpu-load[1].gnice', 'cpu-load[1].idle', 'process-and-context-switch.proc', 'process-and-context-switch.cswch', 'interrupts[0].CPU0', 'interrupts[1].CPU0', 'interrupts[2].CPU0', 'interrupts[3].CPU0', 'interrupts[4].CPU0', 'interrupts[5].CPU0', 'interrupts[6].CPU0', 'interrupts[7].CPU0', 'interrupts[8].CPU0', 'interrupts[9].CPU0', 'interrupts[10].CPU0', 'interrupts[11].CPU0', 'interrupts[12].CPU0', 'interrupts[13].CPU0', 'interrupts[14].CPU0', 'interrupts[15].CPU0', 'interrupts[16].CPU0', 'interrupts[17].CPU0', 'interrupts[18].CPU0', 'interrupts[19].CPU0', 'interrupts[20].CPU0', 'interrupts[21].CPU0', 'interrupts[22].CPU0', 'interrupts[23].CPU0', 'interrupts[24].CPU0', 'interrupts[25].CPU0', 'interrupts[26].CPU0', 'interrupts[27].CPU0', 'interrupts[28].CPU0', 'swap-pages.pswpin', 'swap-pages.pswpout', 'io.tps', 'io.io-reads.rtps', 'io.io-reads.bread', 'io.io-writes.wtps', 'io.io-writes.bwrtn', 'io.io-discard.dtps', 'io.io-discard.bdscd', 'memory.memfree', 'memory.avail', 'memory.memused', 'memory.memused-percent', 'memory.buffers', 'memory.cached', 'memory.commit', 'memory.commit-percent', 'memory.active', 'memory.inactive', 'memory.dirty', 'memory.shared', 'memory.anonpg', 'memory.slab', 'memory.kstack', 'memory.pgtbl', 'memory.vmused', 'memory.swpfree', 'memory.swpused', 'memory.swpused-percent', 'memory.swpcad', 'memory.swpcad-percent', 'disk[0].tps', 'disk[0].rd_sec', 'disk[0].wr_sec', 'disk[0].dc_sec', 'disk[0].rkB', 'disk[0].wkB', 'disk[0].dkB', 'disk[0].avgrq-sz', 'disk[0].areq-sz', 'disk[0].avgqu-sz', 'disk[0].aqu-sz', 'disk[0].await', 'disk[0].util-percent', 'network.net-dev[0].rxpck', 'network.net-dev[0].txpck', 'network.net-dev[0].rxkB', 'network.net-dev[0].txkB', 'network.net-dev[0].rxcmp', 'network.net-dev[0].txcmp', 'network.net-dev[0].rxmcst', 'network.net-dev[0].ifutil-percent', 'network.net-dev[1].rxpck', 'network.net-dev[1].txpck', 'network.net-dev[1].rxkB', 'network.net-dev[1].txkB', 'network.net-dev[1].rxcmp', 'network.net-dev[1].txcmp', 'network.net-dev[1].rxmcst', 'network.net-dev[1].ifutil-percent', 'network.net-dev[2].rxpck', 'network.net-dev[2].txpck', 'network.net-dev[2].rxkB', 'network.net-dev[2].txkB', 'network.net-dev[2].rxcmp', 'network.net-dev[2].txcmp', 'network.net-dev[2].rxmcst', 'network.net-dev[2].ifutil-percent', 'network.net-edev[0].rxerr', 'network.net-edev[0].txerr', 'network.net-edev[0].coll', 'network.net-edev[0].rxdrop', 'network.net-edev[0].txdrop', 'network.net-edev[0].txcarr', 'network.net-edev[0].rxfram', 'network.net-edev[0].rxfifo', 'network.net-edev[0].txfifo', 'network.net-edev[1].rxerr', 'network.net-edev[1].txerr', 'network.net-edev[1].coll', 'network.net-edev[1].rxdrop', 'network.net-edev[1].txdrop', 'network.net-edev[1].txcarr', 'network.net-edev[1].rxfram', 'network.net-edev[1].rxfifo', 'network.net-edev[1].txfifo', 'network.net-edev[2].rxerr', 'network.net-edev[2].txerr', 'network.net-edev[2].coll', 'network.net-edev[2].rxdrop', 'network.net-edev[2].txdrop', 'network.net-edev[2].txcarr', 'network.net-edev[2].rxfram', 'network.net-edev[2].rxfifo', 'network.net-edev[2].txfifo', 'network.net-nfs.call', 'network.net-nfs.retrans', 'network.net-nfs.read', 'network.net-nfs.write', 'network.net-nfs.access', 'network.net-nfs.getatt', 'network.net-nfsd.scall', 'network.net-nfsd.badcall', 'network.net-nfsd.packet', 'network.net-nfsd.udp', 'network.net-nfsd.tcp', 'network.net-nfsd.hit', 'network.net-nfsd.miss', 'network.net-nfsd.sread', 'network.net-nfsd.swrite', 'network.net-nfsd.saccess', 'network.net-nfsd.sgetatt', 'network.net-sock.totsck', 'network.net-sock.tcpsck', 'network.net-sock.udpsck', 'network.net-sock.rawsck', 'network.net-sock.ip-frag', 'network.net-sock.tcp-tw', 'network.net-ip.irec', 'network.net-ip.fwddgm', 'network.net-ip.idel', 'network.net-ip.orq', 'network.net-ip.asmrq', 'network.net-ip.asmok', 'network.net-ip.fragok', 'network.net-ip.fragcrt', 'network.net-eip.ihdrerr', 'network.net-eip.iadrerr', 'network.net-eip.iukwnpr', 'network.net-eip.idisc', 'network.net-eip.odisc', 'network.net-eip.onort', 'network.net-eip.asmf', 'network.net-eip.fragf', 'network.net-icmp.imsg', 'network.net-icmp.omsg', 'network.net-icmp.iech', 'network.net-icmp.iechr', 'network.net-icmp.oech', 'network.net-icmp.oechr', 'network.net-icmp.itm', 'network.net-icmp.itmr', 'network.net-icmp.otm', 'network.net-icmp.otmr', 'network.net-icmp.iadrmk', 'network.net-icmp.iadrmkr', 'network.net-icmp.oadrmk', 'network.net-icmp.oadrmkr', 'network.net-eicmp.ierr', 'network.net-eicmp.oerr', 'network.net-eicmp.idstunr', 'network.net-eicmp.odstunr', 'network.net-eicmp.itmex', 'network.net-eicmp.otmex', 'network.net-eicmp.iparmpb', 'network.net-eicmp.oparmpb', 'network.net-eicmp.isrcq', 'network.net-eicmp.osrcq', 'network.net-eicmp.iredir', 'network.net-eicmp.oredir', 'network.net-tcp.active', 'network.net-tcp.passive', 'network.net-tcp.iseg', 'network.net-tcp.oseg', 'network.net-etcp.atmptf', 'network.net-etcp.estres', 'network.net-etcp.retrseg', 'network.net-etcp.isegerr', 'network.net-etcp.orsts', 'network.net-udp.idgm', 'network.net-udp.odgm', 'network.net-udp.noport', 'network.net-udp.idgmerr', 'network.net-sock6.tcp6sck', 'network.net-sock6.udp6sck', 'network.net-sock6.raw6sck', 'network.net-sock6.ip6-frag', 'network.net-ip6.irec6', 'network.net-ip6.fwddgm6', 'network.net-ip6.idel6', 'network.net-ip6.orq6', 'network.net-ip6.asmrq6', 'network.net-ip6.asmok6', 'network.net-ip6.imcpck6', 'network.net-ip6.omcpck6', 'network.net-ip6.fragok6', 'network.net-ip6.fragcr6', 'network.net-eip6.ihdrer6', 'network.net-eip6.iadrer6', 'network.net-eip6.iukwnp6', 'network.net-eip6.i2big6', 'network.net-eip6.idisc6', 'network.net-eip6.odisc6', 'network.net-eip6.inort6', 'network.net-eip6.onort6', 'network.net-eip6.asmf6', 'network.net-eip6.fragf6', 'network.net-eip6.itrpck6', 'network.net-icmp6.imsg6', 'network.net-icmp6.omsg6', 'network.net-icmp6.iech6', 'network.net-icmp6.iechr6', 'network.net-icmp6.oechr6', 'network.net-icmp6.igmbq6', 'network.net-icmp6.igmbr6', 'network.net-icmp6.ogmbr6', 'network.net-icmp6.igmbrd6', 'network.net-icmp6.ogmbrd6', 'network.net-icmp6.irtsol6', 'network.net-icmp6.ortsol6', 'network.net-icmp6.irtad6', 'network.net-icmp6.inbsol6', 'network.net-icmp6.onbsol6', 'network.net-icmp6.inbad6', 'network.net-icmp6.onbad6', 'network.net-eicmp6.ierr6', 'network.net-eicmp6.idtunr6', 'network.net-eicmp6.odtunr6', 'network.net-eicmp6.itmex6', 'network.net-eicmp6.otmex6', 'network.net-eicmp6.iprmpb6', 'network.net-eicmp6.oprmpb6', 'network.net-eicmp6.iredir6', 'network.net-eicmp6.oredir6', 'network.net-eicmp6.ipck2b6', 'network.net-eicmp6.opck2b6', 'network.net-udp6.idgm6', 'network.net-udp6.odgm6', 'network.net-udp6.noport6', 'network.net-udp6.idgmer6', 'network.softnet[0].total', 'network.softnet[0].dropd', 'network.softnet[0].squeezd', 'network.softnet[0].rx_rps', 'network.softnet[0].flw_lim', 'network.softnet[0].blg_len', 'network.softnet[1].cpu', 'network.softnet[1].total', 'network.softnet[1].dropd', 'network.softnet[1].squeezd', 'network.softnet[1].rx_rps', 'network.softnet[1].flw_lim', 'network.softnet[1].blg_len', 'power-management.cpu-frequency[0].frequency', 'power-management.cpu-frequency[1].number', 'power-management.cpu-frequency[1].frequency', 'filesystems[0].MBfsfree', 'filesystems[0].MBfsused', 'filesystems[0].%fsused', 'filesystems[0].%ufsused', 'filesystems[0].Ifree', 'filesystems[0].Iused', 'filesystems[0].%Iused', 'MalwareFamily']
+  SAR test  columns: ['cpu-load[0].usr', 'cpu-load[0].nice', 'cpu-load[0].sys', 'cpu-load[0].iowait', 'cpu-load[0].steal', 'cpu-load[0].irq', 'cpu-load[0].soft', 'cpu-load[0].guest', 'cpu-load[0].gnice', 'cpu-load[0].idle', 'cpu-load[1].cpu', 'cpu-load[1].usr', 'cpu-load[1].nice', 'cpu-load[1].sys', 'cpu-load[1].iowait', 'cpu-load[1].steal', 'cpu-load[1].irq', 'cpu-load[1].soft', 'cpu-load[1].guest', 'cpu-load[1].gnice', 'cpu-load[1].idle', 'process-and-context-switch.proc', 'process-and-context-switch.cswch', 'interrupts[0].CPU0', 'interrupts[1].CPU0', 'interrupts[2].CPU0', 'interrupts[3].CPU0', 'interrupts[4].CPU0', 'interrupts[5].CPU0', 'interrupts[6].CPU0', 'interrupts[7].CPU0', 'interrupts[8].CPU0', 'interrupts[9].CPU0', 'interrupts[10].CPU0', 'interrupts[11].CPU0', 'interrupts[12].CPU0', 'interrupts[13].CPU0', 'interrupts[14].CPU0', 'interrupts[15].CPU0', 'interrupts[16].CPU0', 'interrupts[17].CPU0', 'interrupts[18].CPU0', 'interrupts[19].CPU0', 'interrupts[20].CPU0', 'interrupts[21].CPU0', 'interrupts[22].CPU0', 'interrupts[23].CPU0', 'interrupts[24].CPU0', 'interrupts[25].CPU0', 'interrupts[26].CPU0', 'interrupts[27].CPU0', 'interrupts[28].CPU0', 'swap-pages.pswpin', 'swap-pages.pswpout', 'io.tps', 'io.io-reads.rtps', 'io.io-reads.bread', 'io.io-writes.wtps', 'io.io-writes.bwrtn', 'io.io-discard.dtps', 'io.io-discard.bdscd', 'memory.memfree', 'memory.avail', 'memory.memused', 'memory.memused-percent', 'memory.buffers', 'memory.cached', 'memory.commit', 'memory.commit-percent', 'memory.active', 'memory.inactive', 'memory.dirty', 'memory.shared', 'memory.anonpg', 'memory.slab', 'memory.kstack', 'memory.pgtbl', 'memory.vmused', 'memory.swpfree', 'memory.swpused', 'memory.swpused-percent', 'memory.swpcad', 'memory.swpcad-percent', 'disk[0].tps', 'disk[0].rd_sec', 'disk[0].wr_sec', 'disk[0].dc_sec', 'disk[0].rkB', 'disk[0].wkB', 'disk[0].dkB', 'disk[0].avgrq-sz', 'disk[0].areq-sz', 'disk[0].avgqu-sz', 'disk[0].aqu-sz', 'disk[0].await', 'disk[0].util-percent', 'network.net-dev[0].rxpck', 'network.net-dev[0].txpck', 'network.net-dev[0].rxkB', 'network.net-dev[0].txkB', 'network.net-dev[0].rxcmp', 'network.net-dev[0].txcmp', 'network.net-dev[0].rxmcst', 'network.net-dev[0].ifutil-percent', 'network.net-dev[1].rxpck', 'network.net-dev[1].txpck', 'network.net-dev[1].rxkB', 'network.net-dev[1].txkB', 'network.net-dev[1].rxcmp', 'network.net-dev[1].txcmp', 'network.net-dev[1].rxmcst', 'network.net-dev[1].ifutil-percent', 'network.net-dev[2].rxpck', 'network.net-dev[2].txpck', 'network.net-dev[2].rxkB', 'network.net-dev[2].txkB', 'network.net-dev[2].rxcmp', 'network.net-dev[2].txcmp', 'network.net-dev[2].rxmcst', 'network.net-dev[2].ifutil-percent', 'network.net-edev[0].rxerr', 'network.net-edev[0].txerr', 'network.net-edev[0].coll', 'network.net-edev[0].rxdrop', 'network.net-edev[0].txdrop', 'network.net-edev[0].txcarr', 'network.net-edev[0].rxfram', 'network.net-edev[0].rxfifo', 'network.net-edev[0].txfifo', 'network.net-edev[1].rxerr', 'network.net-edev[1].txerr', 'network.net-edev[1].coll', 'network.net-edev[1].rxdrop', 'network.net-edev[1].txdrop', 'network.net-edev[1].txcarr', 'network.net-edev[1].rxfram', 'network.net-edev[1].rxfifo', 'network.net-edev[1].txfifo', 'network.net-edev[2].rxerr', 'network.net-edev[2].txerr', 'network.net-edev[2].coll', 'network.net-edev[2].rxdrop', 'network.net-edev[2].txdrop', 'network.net-edev[2].txcarr', 'network.net-edev[2].rxfram', 'network.net-edev[2].rxfifo', 'network.net-edev[2].txfifo', 'network.net-nfs.call', 'network.net-nfs.retrans', 'network.net-nfs.read', 'network.net-nfs.write', 'network.net-nfs.access', 'network.net-nfs.getatt', 'network.net-nfsd.scall', 'network.net-nfsd.badcall', 'network.net-nfsd.packet', 'network.net-nfsd.udp', 'network.net-nfsd.tcp', 'network.net-nfsd.hit', 'network.net-nfsd.miss', 'network.net-nfsd.sread', 'network.net-nfsd.swrite', 'network.net-nfsd.saccess', 'network.net-nfsd.sgetatt', 'network.net-sock.totsck', 'network.net-sock.tcpsck', 'network.net-sock.udpsck', 'network.net-sock.rawsck', 'network.net-sock.ip-frag', 'network.net-sock.tcp-tw', 'network.net-ip.irec', 'network.net-ip.fwddgm', 'network.net-ip.idel', 'network.net-ip.orq', 'network.net-ip.asmrq', 'network.net-ip.asmok', 'network.net-ip.fragok', 'network.net-ip.fragcrt', 'network.net-eip.ihdrerr', 'network.net-eip.iadrerr', 'network.net-eip.iukwnpr', 'network.net-eip.idisc', 'network.net-eip.odisc', 'network.net-eip.onort', 'network.net-eip.asmf', 'network.net-eip.fragf', 'network.net-icmp.imsg', 'network.net-icmp.omsg', 'network.net-icmp.iech', 'network.net-icmp.iechr', 'network.net-icmp.oech', 'network.net-icmp.oechr', 'network.net-icmp.itm', 'network.net-icmp.itmr', 'network.net-icmp.otm', 'network.net-icmp.otmr', 'network.net-icmp.iadrmk', 'network.net-icmp.iadrmkr', 'network.net-icmp.oadrmk', 'network.net-icmp.oadrmkr', 'network.net-eicmp.ierr', 'network.net-eicmp.oerr', 'network.net-eicmp.idstunr', 'network.net-eicmp.odstunr', 'network.net-eicmp.itmex', 'network.net-eicmp.otmex', 'network.net-eicmp.iparmpb', 'network.net-eicmp.oparmpb', 'network.net-eicmp.isrcq', 'network.net-eicmp.osrcq', 'network.net-eicmp.iredir', 'network.net-eicmp.oredir', 'network.net-tcp.active', 'network.net-tcp.passive', 'network.net-tcp.iseg', 'network.net-tcp.oseg', 'network.net-etcp.atmptf', 'network.net-etcp.estres', 'network.net-etcp.retrseg', 'network.net-etcp.isegerr', 'network.net-etcp.orsts', 'network.net-udp.idgm', 'network.net-udp.odgm', 'network.net-udp.noport', 'network.net-udp.idgmerr', 'network.net-sock6.tcp6sck', 'network.net-sock6.udp6sck', 'network.net-sock6.raw6sck', 'network.net-sock6.ip6-frag', 'network.net-ip6.irec6', 'network.net-ip6.fwddgm6', 'network.net-ip6.idel6', 'network.net-ip6.orq6', 'network.net-ip6.asmrq6', 'network.net-ip6.asmok6', 'network.net-ip6.imcpck6', 'network.net-ip6.omcpck6', 'network.net-ip6.fragok6', 'network.net-ip6.fragcr6', 'network.net-eip6.ihdrer6', 'network.net-eip6.iadrer6', 'network.net-eip6.iukwnp6', 'network.net-eip6.i2big6', 'network.net-eip6.idisc6', 'network.net-eip6.odisc6', 'network.net-eip6.inort6', 'network.net-eip6.onort6', 'network.net-eip6.asmf6', 'network.net-eip6.fragf6', 'network.net-eip6.itrpck6', 'network.net-icmp6.imsg6', 'network.net-icmp6.omsg6', 'network.net-icmp6.iech6', 'network.net-icmp6.iechr6', 'network.net-icmp6.oechr6', 'network.net-icmp6.igmbq6', 'network.net-icmp6.igmbr6', 'network.net-icmp6.ogmbr6', 'network.net-icmp6.igmbrd6', 'network.net-icmp6.ogmbrd6', 'network.net-icmp6.irtsol6', 'network.net-icmp6.ortsol6', 'network.net-icmp6.irtad6', 'network.net-icmp6.inbsol6', 'network.net-icmp6.onbsol6', 'network.net-icmp6.inbad6', 'network.net-icmp6.onbad6', 'network.net-eicmp6.ierr6', 'network.net-eicmp6.idtunr6', 'network.net-eicmp6.odtunr6', 'network.net-eicmp6.itmex6', 'network.net-eicmp6.otmex6', 'network.net-eicmp6.iprmpb6', 'network.net-eicmp6.oprmpb6', 'network.net-eicmp6.iredir6', 'network.net-eicmp6.oredir6', 'network.net-eicmp6.ipck2b6', 'network.net-eicmp6.opck2b6', 'network.net-udp6.idgm6', 'network.net-udp6.odgm6', 'network.net-udp6.noport6', 'network.net-udp6.idgmer6', 'network.softnet[0].total', 'network.softnet[0].dropd', 'network.softnet[0].squeezd', 'network.softnet[0].rx_rps', 'network.softnet[0].flw_lim', 'network.softnet[0].blg_len', 'network.softnet[1].cpu', 'network.softnet[1].total', 'network.softnet[1].dropd', 'network.softnet[1].squeezd', 'network.softnet[1].rx_rps', 'network.softnet[1].flw_lim', 'network.softnet[1].blg_len', 'power-management.cpu-frequency[0].frequency', 'power-management.cpu-frequency[1].number', 'power-management.cpu-frequency[1].frequency', 'filesystems[0].MBfsfree', 'filesystems[0].MBfsused', 'filesystems[0].%fsused', 'filesystems[0].%ufsused', 'filesystems[0].Ifree', 'filesystems[0].Iused', 'filesystems[0].%Iused', 'MalwareFamily']
+  Using label column: 'MalwareFamily' (encoded integers)
+  Dropped 4 redundant columns from SAR
+  SAR  train: (1477686, 301)   test: (105843, 301)
+
+  Training Random Forest [sar_only] ...
+  Training time: 243.2s
+  Model saved → outputs/models/rf_sar_only.pkl
+
+  ── Results: sar_only ──────────────────────────────────
+  Accuracy        : 0.9768
+  F1 (macro)      : 0.8387
+  F1 (weighted)   : 0.9761
+
+              precision    recall  f1-score   support
+
+      Benign       1.00      1.00      1.00     61571
+   DarkNexus       0.85      0.97      0.91      1200
+      Gafgyt       0.86      0.85      0.86       182
+     Generic       0.40      0.93      0.56       288
+       Mirai       0.96      0.98      0.97     38488
+     Unknown       0.91      0.62      0.74      4114
+
+    accuracy                           0.98    105843
+   macro avg       0.83      0.89      0.84    105843
+weighted avg       0.98      0.98      0.98    105843
+
+  Saved: ./outputs/phase2_plots/confusion_sar_only.png
+  Saved: ./outputs/phase2_plots/importance_sar_only.png
+
+=================================================================
+  SCENARIO 3 — PCAP + SAR fused (join on Hash)
+=================================================================
+
+  Building fused dataset from raw CSVs (joining on Hash) ...
+  Raw PCAP: (455641, 42)   Raw SAR: (529212, 411)
+  PCAP aggregated per Hash: (4475, 33)
+  SAR  aggregated per Hash: (4435, 354)
+  Fused (inner join): (4435, 387)
+  Label distribution:
+MalwareFamily
+Benign       2570
+Mirai        1620
+Unknown       173
+DarkNexus      50
+Generic        12
+Gafgyt         10
+  Fused train: (3548, 386)   test: (887, 386)
+
+  Training Random Forest [fused] ...
+  Training time: 0.4s
+  Model saved → outputs/models/rf_fused.pkl
+
+  ── Results: fused ──────────────────────────────────
+  Accuracy        : 0.9493
+  F1 (macro)      : 0.4336
+  F1 (weighted)   : 0.9285
+
+              precision    recall  f1-score   support
+
+      Benign       1.00      1.00      1.00       514
+   DarkNexus       1.00      0.50      0.67        10
+      Gafgyt       0.00      0.00      0.00         2
+     Generic       0.00      0.00      0.00         2
+       Mirai       0.88      1.00      0.93       324
+     Unknown       0.00      0.00      0.00        35
+
+    accuracy                           0.95       887
+   macro avg       0.48      0.42      0.43       887
+weighted avg       0.91      0.95      0.93       887
+
+  Saved: ./outputs/phase2_plots/confusion_fused.png
+  Saved: ./outputs/phase2_plots/importance_fused.png
+
+
+=================================================================
+  ABLATION STUDY — SCENARIO COMPARISON
+=================================================================
+
+  Scenario                 Accuracy   F1 Macro  F1 Weighted
+  ────────────────────── ────────── ────────── ────────────
+  pcap_only                  0.6919     0.4636       0.7381
+  sar_only                   0.9768     0.8387       0.9761
+  fused                      0.9493     0.4336       0.9285
+
+  Best scenario (F1 macro): sar_only
+
+  Saved: outputs/scenario_comparison.csv
+  Saved: ./outputs/phase2_plots/scenario_comparison.png
+
+
+=================================================================
+  DONE — Phase 2 complete
+=================================================================
+
+  Files created:
+
+    outputs/models/
+      rf_pcap_only.pkl          Random Forest trained on PCAP
+      rf_sar_only.pkl           Random Forest trained on SAR
+      rf_fused.pkl              Random Forest trained on PCAP+SAR
+
+    outputs/phase2_plots/
+      confusion_pcap_only.png   Confusion matrix (counts + normalised)
+      confusion_sar_only.png
+      confusion_fused.png
+      importance_pcap_only.png  Top 20 feature importances
+      importance_sar_only.png
+      importance_fused.png
+      report_*.txt              Full classification reports
+      scenario_comparison.png   Bar chart comparing all 3 scenarios
+
+    outputs/scenario_comparison.csv   Summary table for your report
+
+  Next step:  python phase3_agent.py
+

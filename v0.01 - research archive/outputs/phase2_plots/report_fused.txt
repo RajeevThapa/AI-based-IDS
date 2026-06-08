@@ -1,0 +1,16 @@
+Scenario: fused
+Accuracy : 0.9493
+F1 macro : 0.4336
+
+              precision    recall  f1-score   support
+
+      Benign       1.00      1.00      1.00       514
+   DarkNexus       1.00      0.50      0.67        10
+      Gafgyt       0.00      0.00      0.00         2
+     Generic       0.00      0.00      0.00         2
+       Mirai       0.88      1.00      0.93       324
+     Unknown       0.00      0.00      0.00        35
+
+    accuracy                           0.95       887
+   macro avg       0.48      0.42      0.43       887
+weighted avg       0.91      0.95      0.93       887

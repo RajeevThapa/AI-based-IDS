@@ -1,0 +1,56 @@
+
+=================================================================
+  Agentic AI IDS for IoT
+  Phase 3 — Autonomous Detection and Response
+  Dataset: CIC-YNU-IoTMal  |  Architecture: X86
+=================================================================
+  [Detector] Loading model ...
+  [Detector] Ready  —  6 classes  ·  402 features
+  [ResponseAgent] Mode: SIMULATED (safe)
+  [FeedbackAgent] Thresholds: {'alert': 0.93, 'block': 0.93, 'isolate': 0.93}
+
+=================================================================
+  FEEDBACK DEMO  —  threshold adaptation  (RQ 2.1)
+=================================================================
+
+  Initial thresholds: {'alert': 0.93, 'block': 0.93, 'isolate': 0.93}
+
+  [DataLoader] Loading fused test CSV (402 features): fused_pcap_test.csv
+  [DataLoader] Loaded: 10 rows × 403 columns
+  [DataLoader] Feature columns: 402
+    [SIM] iptables -A INPUT -s 10.0.0.99 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED test-dev (eth0 down) — Mirai  src=10.0.0.99  score=0.934
+  🔴  [11:06:45]  ISOLATE   Mirai           score=0.934  src=10.0.0.99        dev=test-dev
+
+  Operator feedback sequence:
+
+  Step 1 → FALSE POSITIVE (system over-reacted)
+  [FeedbackAgent] False positive — Mirai (score=0.934) → isolate. Raising thresholds +0.05
+  [FeedbackAgent] Thresholds now: {'alert': 0.95, 'block': 0.95, 'isolate': 0.95}
+
+  Step 2 → FALSE POSITIVE again
+  [FeedbackAgent] False positive — Mirai (score=0.934) → isolate. Raising thresholds +0.05
+  [FeedbackAgent] Thresholds now: {'alert': 0.95, 'block': 0.95, 'isolate': 0.95}
+
+  Step 3 → TRUE POSITIVE (attack confirmed)
+  [FeedbackAgent] True positive confirmed — Mirai. No change.
+  [FeedbackAgent] Thresholds now: {'alert': 0.95, 'block': 0.95, 'isolate': 0.95}
+
+  Step 4 → FALSE NEGATIVE (attack was missed)
+  [FeedbackAgent] False negative — attack missed. Lowering thresholds -0.02
+  [FeedbackAgent] Thresholds now: {'alert': 0.93, 'block': 0.93, 'isolate': 0.93}
+
+  Final thresholds  : {'alert': 0.93, 'block': 0.93, 'isolate': 0.93}
+  Adaptation events : 3
+  History file      : outputs/threshold_history.jsonl
+
+  → Demonstrates RQ 2.1: agent adapts based on feedback
+
+=================================================================
+  AUDIT SUMMARY
+=================================================================
+  Total decisions : 1
+  Actions         : {'isolate': 1}
+  Families        : {'Mirai': 1}

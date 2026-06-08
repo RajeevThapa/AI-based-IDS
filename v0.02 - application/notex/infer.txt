@@ -1,0 +1,24 @@
+  [Detector] Loading model ...
+  [Detector] Ready  —  6 classes  ·  402 features
+  [ResponseAgent] Mode: SIMULATED (safe)
+
+  No --features file → using random vector (demo)
+
+  ── Detection ────────────────────────────────────────
+  Family       : Mirai
+  Threat score : 0.6298
+
+  Class probabilities:
+    Mirai             0.6298  ██████████████████
+    Unknown           0.2077  ██████
+    Benign            0.1050  ███
+    Gafgyt            0.0325  
+    Generic           0.0150  
+    DarkNexus         0.0100  
+    [SIM] iptables -A INPUT -s 0.0.0.0 -j DROP
+
+    🚫  BLOCKED 0.0.0.0 — Mirai on device-unknown  score=0.630
+  🚫  [11:07:10]  BLOCK     Mirai           score=0.630  src=0.0.0.0          dev=device-unknown
+
+  Decision  : BLOCK
+  Audit log : outputs/audit_log.jsonl

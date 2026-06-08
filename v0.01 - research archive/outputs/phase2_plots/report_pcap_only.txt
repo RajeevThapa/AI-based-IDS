@@ -1,0 +1,16 @@
+Scenario: pcap_only
+Accuracy : 0.6919
+F1 macro : 0.4636
+
+              precision    recall  f1-score   support
+
+      Benign       0.92      0.99      0.96     16525
+   DarkNexus       0.06      0.24      0.09      1988
+      Gafgyt       0.74      0.69      0.71      1533
+     Generic       0.06      0.35      0.11       815
+       Mirai       0.88      0.68      0.77     63962
+     Unknown       0.12      0.18      0.15      6306
+
+    accuracy                           0.69     91129
+   macro avg       0.46      0.52      0.46     91129
+weighted avg       0.81      0.69      0.74     91129

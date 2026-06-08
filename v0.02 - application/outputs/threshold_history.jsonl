@@ -1,0 +1,3 @@
+{"timestamp": "2026-06-08T11:06:45.745014+00:00", "delta": 0.05, "before": {"alert": 0.93, "block": 0.93, "isolate": 0.93}, "after": {"alert": 0.95, "block": 0.95, "isolate": 0.95}}
+{"timestamp": "2026-06-08T11:06:45.745541+00:00", "delta": 0.05, "before": {"alert": 0.95, "block": 0.95, "isolate": 0.95}, "after": {"alert": 0.95, "block": 0.95, "isolate": 0.95}}
+{"timestamp": "2026-06-08T11:06:45.745769+00:00", "delta": -0.02, "before": {"alert": 0.95, "block": 0.95, "isolate": 0.95}, "after": {"alert": 0.93, "block": 0.93, "isolate": 0.93}}

@@ -1,0 +1,34 @@
+Loading raw pcap.csv ...
+  Shape: (455641, 42)  |  Has Hash: True
+  Test split: 91,129 rows  (expected 91,129)
+
+Loading sar.csv ...
+  Shape: (529212, 411)
+Building SAR profile per Hash ...
+  SAR profile: (4435, 370)  (expected 4435 rows, 370 cols)
+
+Joining SAR onto test PCAP rows ...
+  Rows with SAR context: 89,543/91,129 (98.3%)
+
+  PCAP features : 32  (expected 32)
+  SAR  features : 370   (expected 370)
+  Total columns : 403   (expected 403 = 402 features + 1 label)
+
+  Label distribution:
+MalwareFamily
+Mirai        63962
+Benign       16525
+Unknown       6306
+DarkNexus     1988
+Gafgyt        1533
+Generic        815
+
+  Column counts correct.
+
+  Saved: ./outputs/fused_pcap_test.csv  (91,129 rows x 403 cols)
+
+Next steps:
+  1. Replace utils/data_loader.py with data_loader_v2.py
+  2. python pipeline.py --demo    # all 6 families, correct predictions
+  3. python pipeline.py           # full batch with 402-feature accuracy
+

@@ -1,0 +1,1641 @@
+
+=================================================================
+  Agentic AI IDS for IoT
+  Phase 3 — Autonomous Detection and Response
+  Dataset: CIC-YNU-IoTMal  |  Architecture: X86
+=================================================================
+  [Detector] Loading model ...
+  [Detector] Ready  —  6 classes  ·  402 features
+  [ResponseAgent] Mode: SIMULATED (safe)
+
+=================================================================
+  BATCH SIMULATION  —  300 fused test samples
+=================================================================
+
+  Loading fused test features ...
+  [DataLoader] Loading fused test CSV (402 features): fused_pcap_test.csv
+  [DataLoader] Loaded: 300 rows × 403 columns
+  [DataLoader] Feature columns: 402
+
+  #     True           Predicted      Score   Action         ms
+  ───── ────────────── ────────────── ─────── ────────── ──────
+    [SIM] iptables -A INPUT -s 10.0.0.1 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.1  score=0.934
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.934  src=10.0.0.1         dev=iot-01
+  1     Mirai          Mirai          0.934  isolate     49.1
+    [SIM] iptables -A INPUT -s 10.0.0.2 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.2  score=0.999
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.999  src=10.0.0.2         dev=iot-02
+  2     Mirai          Mirai          0.999  isolate     33.9
+    [SIM] iptables -A INPUT -s 10.0.0.3 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.3  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.3         dev=iot-03
+  3     Mirai          Mirai          1.000  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.0.4 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.4  score=0.999
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.999  src=10.0.0.4         dev=iot-04
+  4     Mirai          Mirai          0.999  isolate     34.6
+    [SIM] iptables -A INPUT -s 10.0.0.5 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.5  score=0.995
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.995  src=10.0.0.5         dev=iot-05
+  5     Mirai          Mirai          0.995  isolate     32.5
+    [SIM] iptables -A INPUT -s 10.0.0.6 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.6  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.6         dev=iot-06
+  6     Mirai          Mirai          1.000  isolate     33.5
+  📋  [10:27:33]  LOG       Benign          score=1.000  src=10.0.0.7         dev=iot-07
+  7     Benign         Benign         1.000  log         45.8
+    [SIM] iptables -A INPUT -s 10.0.0.8 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.8  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.8         dev=iot-08
+  8     Mirai          Mirai          1.000  isolate     33.6
+    [SIM] iptables -A INPUT -s 10.0.0.9 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.9  score=0.993
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.993  src=10.0.0.9         dev=iot-09
+  9     Mirai          Mirai          0.993  isolate     44.6
+  📋  [10:27:33]  LOG       Benign          score=1.000  src=10.0.0.10        dev=iot-10
+  10    Benign         Benign         1.000  log         31.7
+  📋  [10:27:33]  LOG       Benign          score=1.000  src=10.0.0.11        dev=iot-11
+  11    Benign         Benign         1.000  log         34.0
+    [SIM] iptables -A INPUT -s 10.0.0.12 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.12  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.12        dev=iot-12
+  12    Mirai          Mirai          1.000  isolate     34.1
+    [SIM] iptables -A INPUT -s 10.0.0.13 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.13  score=0.999
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.999  src=10.0.0.13        dev=iot-01
+  13    Mirai          Mirai          0.999  isolate     35.6
+  📋  [10:27:33]  LOG       Benign          score=1.000  src=10.0.0.14        dev=iot-02
+  14    Benign         Benign         1.000  log         32.5
+    [SIM] iptables -A INPUT -s 10.0.0.15 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.15  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.15        dev=iot-03
+  15    Mirai          Mirai          1.000  isolate     34.9
+    [SIM] iptables -A INPUT -s 10.0.0.16 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.16  score=1.000
+  🔴  [10:27:33]  ISOLATE   Mirai           score=1.000  src=10.0.0.16        dev=iot-04
+  16    Mirai          Mirai          1.000  isolate     45.2
+    [SIM] iptables -A INPUT -s 10.0.0.17 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.17  score=0.999
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.999  src=10.0.0.17        dev=iot-05
+  17    Mirai          Mirai          0.999  isolate     33.9
+  📋  [10:27:33]  LOG       Benign          score=1.000  src=10.0.0.18        dev=iot-06
+  18    Benign         Benign         1.000  log         35.5
+    [SIM] iptables -A INPUT -s 10.0.0.19 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.19  score=0.965
+  🔴  [10:27:33]  ISOLATE   Mirai           score=0.965  src=10.0.0.19        dev=iot-07
+  19    Mirai          Mirai          0.965  isolate     44.8
+    [SIM] iptables -A INPUT -s 10.0.0.20 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.20  score=0.992
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.992  src=10.0.0.20        dev=iot-08
+  20    Mirai          Mirai          0.992  isolate     33.0
+    [SIM] iptables -A INPUT -s 10.0.0.21 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.21  score=0.999
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.999  src=10.0.0.21        dev=iot-09
+  21    Mirai          Mirai          0.999  isolate     30.6
+    [SIM] iptables -A INPUT -s 10.0.0.22 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.22  score=0.999
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.999  src=10.0.0.22        dev=iot-10
+  22    Mirai          Mirai          0.999  isolate     35.0
+    [SIM] iptables -A INPUT -s 10.0.0.23 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.23  score=0.946
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.946  src=10.0.0.23        dev=iot-11
+  23    Mirai          Mirai          0.946  isolate     33.9
+    [SIM] iptables -A INPUT -s 10.0.0.24 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.24  score=1.000
+  🔴  [10:27:34]  ISOLATE   Mirai           score=1.000  src=10.0.0.24        dev=iot-12
+  24    Mirai          Mirai          1.000  isolate     34.1
+    [SIM] iptables -A INPUT -s 10.0.0.25 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Unknown  src=10.0.0.25  score=0.999
+  🔴  [10:27:34]  ISOLATE   Unknown         score=0.999  src=10.0.0.25        dev=iot-01
+  25    Unknown        Unknown        0.999  isolate     32.5
+    [SIM] iptables -A INPUT -s 10.0.0.26 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.26  score=1.000
+  🔴  [10:27:34]  ISOLATE   Mirai           score=1.000  src=10.0.0.26        dev=iot-02
+  26    Mirai          Mirai          1.000  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.0.27 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — DarkNexus  src=10.0.0.27  score=0.999
+  🔴  [10:27:34]  ISOLATE   DarkNexus       score=0.999  src=10.0.0.27        dev=iot-03
+  27    DarkNexus      DarkNexus      0.999  isolate     33.3
+    [SIM] iptables -A INPUT -s 10.0.0.28 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.28  score=0.998
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.998  src=10.0.0.28        dev=iot-04
+  28    Mirai          Mirai          0.998  isolate     34.8
+  📋  [10:27:34]  LOG       Benign          score=1.000  src=10.0.0.29        dev=iot-05
+  29    Benign         Benign         1.000  log         31.4
+    [SIM] iptables -A INPUT -s 10.0.0.30 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.30  score=0.972
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.972  src=10.0.0.30        dev=iot-06
+  30    Mirai          Mirai          0.972  isolate     32.0
+    [SIM] iptables -A INPUT -s 10.0.0.31 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Unknown  src=10.0.0.31  score=0.987
+  🔴  [10:27:34]  ISOLATE   Unknown         score=0.987  src=10.0.0.31        dev=iot-07
+  31    Unknown        Unknown        0.987  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.0.32 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.32  score=0.999
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.999  src=10.0.0.32        dev=iot-08
+  32    Mirai          Mirai          0.999  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.0.33 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.33  score=0.989
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.989  src=10.0.0.33        dev=iot-09
+  33    Mirai          Mirai          0.989  isolate     32.2
+    [SIM] iptables -A INPUT -s 10.0.0.34 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.34  score=0.993
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.993  src=10.0.0.34        dev=iot-10
+  34    Mirai          Mirai          0.993  isolate     33.4
+    [SIM] iptables -A INPUT -s 10.0.0.35 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.35  score=0.996
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.996  src=10.0.0.35        dev=iot-11
+  35    Mirai          Mirai          0.996  isolate     32.6
+    [SIM] iptables -A INPUT -s 10.0.0.36 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.36  score=0.973
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.973  src=10.0.0.36        dev=iot-12
+  36    Mirai          Mirai          0.973  isolate     36.7
+    [SIM] iptables -A INPUT -s 10.0.0.37 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — DarkNexus  src=10.0.0.37  score=0.999
+  🔴  [10:27:34]  ISOLATE   DarkNexus       score=0.999  src=10.0.0.37        dev=iot-01
+  37    DarkNexus      DarkNexus      0.999  isolate     33.5
+    [SIM] iptables -A INPUT -s 10.0.0.38 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.38  score=0.909
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.909  src=10.0.0.38        dev=iot-02
+  38    Mirai          Mirai          0.909  isolate     34.4
+  📋  [10:27:34]  LOG       Benign          score=1.000  src=10.0.0.39        dev=iot-03
+  39    Benign         Benign         1.000  log         32.0
+    [SIM] iptables -A INPUT -s 10.0.0.40 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.40  score=0.967
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.967  src=10.0.0.40        dev=iot-04
+  40    Mirai          Mirai          0.967  isolate     42.7
+    [SIM] iptables -A INPUT -s 10.0.0.41 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.41  score=0.952
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.952  src=10.0.0.41        dev=iot-05
+  41    Mirai          Mirai          0.952  isolate     43.9
+    [SIM] iptables -A INPUT -s 10.0.0.42 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.42  score=0.952
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.952  src=10.0.0.42        dev=iot-06
+  42    Mirai          Mirai          0.952  isolate     31.7
+  📋  [10:27:34]  LOG       Benign          score=1.000  src=10.0.0.43        dev=iot-07
+  43    Benign         Benign         1.000  log         43.2
+    [SIM] iptables -A INPUT -s 10.0.0.44 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Unknown  src=10.0.0.44  score=0.982
+  🔴  [10:27:34]  ISOLATE   Unknown         score=0.982  src=10.0.0.44        dev=iot-08
+  44    Unknown        Unknown        0.982  isolate     43.9
+    [SIM] iptables -A INPUT -s 10.0.0.45 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.45  score=0.996
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.996  src=10.0.0.45        dev=iot-09
+  45    Mirai          Mirai          0.996  isolate     34.8
+    [SIM] iptables -A INPUT -s 10.0.0.46 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.46  score=0.999
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.999  src=10.0.0.46        dev=iot-10
+  46    Mirai          Mirai          0.999  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.47 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.47  score=1.000
+  🔴  [10:27:34]  ISOLATE   Mirai           score=1.000  src=10.0.0.47        dev=iot-11
+  47    Mirai          Mirai          1.000  isolate     34.1
+    [SIM] iptables -A INPUT -s 10.0.0.48 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.48  score=0.999
+  🔴  [10:27:34]  ISOLATE   Mirai           score=0.999  src=10.0.0.48        dev=iot-12
+  48    Mirai          Mirai          0.999  isolate     32.6
+    [SIM] iptables -A INPUT -s 10.0.0.49 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.49  score=1.000
+  🔴  [10:27:35]  ISOLATE   Mirai           score=1.000  src=10.0.0.49        dev=iot-01
+  49    Mirai          Mirai          1.000  isolate     30.2
+    [SIM] iptables -A INPUT -s 10.0.0.50 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.50  score=0.999
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.999  src=10.0.0.50        dev=iot-02
+  50    Mirai          Mirai          0.999  isolate     31.8
+    [SIM] iptables -A INPUT -s 10.0.0.51 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.51  score=0.999
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.999  src=10.0.0.51        dev=iot-03
+  51    Mirai          Mirai          0.999  isolate     32.1
+    [SIM] iptables -A INPUT -s 10.0.0.52 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.52  score=0.998
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.998  src=10.0.0.52        dev=iot-04
+  52    Mirai          Mirai          0.998  isolate     33.5
+    [SIM] iptables -A INPUT -s 10.0.0.53 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.53  score=0.997
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.997  src=10.0.0.53        dev=iot-05
+  53    Mirai          Mirai          0.997  isolate     33.1
+  📋  [10:27:35]  LOG       Benign          score=1.000  src=10.0.0.54        dev=iot-06
+  54    Benign         Benign         1.000  log         33.2
+    [SIM] iptables -A INPUT -s 10.0.0.55 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.55  score=1.000
+  🔴  [10:27:35]  ISOLATE   Mirai           score=1.000  src=10.0.0.55        dev=iot-07
+  55    Mirai          Mirai          1.000  isolate     34.2
+    [SIM] iptables -A INPUT -s 10.0.0.56 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.56  score=0.990
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.990  src=10.0.0.56        dev=iot-08
+  56    Mirai          Mirai          0.990  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.0.57 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Unknown  src=10.0.0.57  score=0.989
+  🔴  [10:27:35]  ISOLATE   Unknown         score=0.989  src=10.0.0.57        dev=iot-09
+  57    Unknown        Unknown        0.989  isolate     33.1
+  📋  [10:27:35]  LOG       Benign          score=1.000  src=10.0.0.58        dev=iot-10
+  58    Benign         Benign         1.000  log         45.5
+    [SIM] iptables -A INPUT -s 10.0.0.59 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Unknown  src=10.0.0.59  score=0.995
+  🔴  [10:27:35]  ISOLATE   Unknown         score=0.995  src=10.0.0.59        dev=iot-11
+  59    Unknown        Unknown        0.995  isolate     36.0
+    [SIM] iptables -A INPUT -s 10.0.0.60 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.60  score=0.988
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.988  src=10.0.0.60        dev=iot-12
+  60    Mirai          Mirai          0.988  isolate     34.2
+    [SIM] iptables -A INPUT -s 10.0.0.61 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.61  score=0.996
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.996  src=10.0.0.61        dev=iot-01
+  61    Mirai          Mirai          0.996  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.0.62 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.62  score=0.990
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.990  src=10.0.0.62        dev=iot-02
+  62    Mirai          Mirai          0.990  isolate     31.4
+    [SIM] iptables -A INPUT -s 10.0.0.63 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.63  score=0.993
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.993  src=10.0.0.63        dev=iot-03
+  63    Mirai          Mirai          0.993  isolate     35.1
+    [SIM] iptables -A INPUT -s 10.0.0.64 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Unknown  src=10.0.0.64  score=0.995
+  🔴  [10:27:35]  ISOLATE   Unknown         score=0.995  src=10.0.0.64        dev=iot-04
+  64    Unknown        Unknown        0.995  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.65 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.65  score=0.998
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.998  src=10.0.0.65        dev=iot-05
+  65    Mirai          Mirai          0.998  isolate     33.0
+  📋  [10:27:35]  LOG       Benign          score=1.000  src=10.0.0.66        dev=iot-06
+  66    Benign         Benign         1.000  log         32.3
+    [SIM] iptables -A INPUT -s 10.0.0.67 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Unknown  src=10.0.0.67  score=0.993
+  🔴  [10:27:35]  ISOLATE   Unknown         score=0.993  src=10.0.0.67        dev=iot-07
+  67    Unknown        Unknown        0.993  isolate     33.5
+  📋  [10:27:35]  LOG       Benign          score=1.000  src=10.0.0.68        dev=iot-08
+  68    Benign         Benign         1.000  log         31.5
+    [SIM] iptables -A INPUT -s 10.0.0.69 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.69  score=1.000
+  🔴  [10:27:35]  ISOLATE   Mirai           score=1.000  src=10.0.0.69        dev=iot-09
+  69    Mirai          Mirai          1.000  isolate     32.2
+    [SIM] iptables -A INPUT -s 10.0.0.70 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Unknown  src=10.0.0.70  score=0.995
+  🔴  [10:27:35]  ISOLATE   Unknown         score=0.995  src=10.0.0.70        dev=iot-10
+  70    Unknown        Unknown        0.995  isolate     43.4
+    [SIM] iptables -A INPUT -s 10.0.0.71 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.71  score=0.975
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.975  src=10.0.0.71        dev=iot-11
+  71    Mirai          Mirai          0.975  isolate     36.7
+  📋  [10:27:35]  LOG       Benign          score=1.000  src=10.0.0.72        dev=iot-12
+  72    Benign         Benign         1.000  log         35.5
+    [SIM] iptables -A INPUT -s 10.0.0.73 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.73  score=1.000
+  🔴  [10:27:35]  ISOLATE   Mirai           score=1.000  src=10.0.0.73        dev=iot-01
+  73    Mirai          Mirai          1.000  isolate     44.0
+    [SIM] iptables -A INPUT -s 10.0.0.74 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Gafgyt  src=10.0.0.74  score=0.827
+  🔴  [10:27:35]  ISOLATE   Gafgyt          score=0.827  src=10.0.0.74        dev=iot-02
+  74    Mirai          Gafgyt         0.827  isolate     34.3
+    [SIM] iptables -A INPUT -s 10.0.0.75 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.75  score=0.998
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.998  src=10.0.0.75        dev=iot-03
+  75    Mirai          Mirai          0.998  isolate     34.2
+    [SIM] iptables -A INPUT -s 10.0.0.76 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.76  score=0.999
+  🔴  [10:27:35]  ISOLATE   Mirai           score=0.999  src=10.0.0.76        dev=iot-04
+  76    Mirai          Mirai          0.999  isolate     31.6
+    [SIM] iptables -A INPUT -s 10.0.0.77 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.77  score=1.000
+  🔴  [10:27:35]  ISOLATE   Mirai           score=1.000  src=10.0.0.77        dev=iot-05
+  77    Mirai          Mirai          1.000  isolate     32.0
+    [SIM] iptables -A INPUT -s 10.0.0.78 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.78  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.78        dev=iot-06
+  78    Mirai          Mirai          1.000  isolate     44.5
+    [SIM] iptables -A INPUT -s 10.0.0.79 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.79  score=0.989
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.989  src=10.0.0.79        dev=iot-07
+  79    Mirai          Mirai          0.989  isolate     33.7
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.80        dev=iot-08
+  80    Benign         Benign         1.000  log         32.3
+    [SIM] iptables -A INPUT -s 10.0.0.81 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.81  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.81        dev=iot-09
+  81    Mirai          Mirai          1.000  isolate     33.1
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.82        dev=iot-10
+  82    Benign         Benign         1.000  log         44.4
+    [SIM] iptables -A INPUT -s 10.0.0.83 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Unknown  src=10.0.0.83  score=0.996
+  🔴  [10:27:36]  ISOLATE   Unknown         score=0.996  src=10.0.0.83        dev=iot-11
+  83    Unknown        Unknown        0.996  isolate     34.5
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.84        dev=iot-12
+  84    Benign         Benign         1.000  log         45.8
+    [SIM] iptables -A INPUT -s 10.0.0.85 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.85  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.85        dev=iot-01
+  85    Mirai          Mirai          1.000  isolate     35.3
+    [SIM] iptables -A INPUT -s 10.0.0.86 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.86  score=0.995
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.995  src=10.0.0.86        dev=iot-02
+  86    Mirai          Mirai          0.995  isolate     33.0
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.87        dev=iot-03
+  87    Benign         Benign         1.000  log         34.5
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.88        dev=iot-04
+  88    Benign         Benign         1.000  log         34.8
+    [SIM] iptables -A INPUT -s 10.0.0.89 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.89  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.89        dev=iot-05
+  89    Mirai          Mirai          0.999  isolate     35.3
+    [SIM] iptables -A INPUT -s 10.0.0.90 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.90  score=0.934
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.934  src=10.0.0.90        dev=iot-06
+  90    Mirai          Mirai          0.934  isolate     33.3
+    [SIM] iptables -A INPUT -s 10.0.0.91 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.91  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.91        dev=iot-07
+  91    Mirai          Mirai          0.999  isolate     33.6
+    [SIM] iptables -A INPUT -s 10.0.0.92 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.92  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.92        dev=iot-08
+  92    Mirai          Mirai          1.000  isolate     34.2
+    [SIM] iptables -A INPUT -s 10.0.0.93 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.93  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.93        dev=iot-09
+  93    Mirai          Mirai          1.000  isolate     43.3
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.94        dev=iot-10
+  94    Benign         Benign         1.000  log         33.5
+    [SIM] iptables -A INPUT -s 10.0.0.95 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.95  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.95        dev=iot-11
+  95    Mirai          Mirai          0.999  isolate     45.9
+    [SIM] iptables -A INPUT -s 10.0.0.96 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.96  score=1.000
+  🔴  [10:27:36]  ISOLATE   Mirai           score=1.000  src=10.0.0.96        dev=iot-12
+  96    Mirai          Mirai          1.000  isolate     44.2
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.97        dev=iot-01
+  97    Benign         Benign         1.000  log         33.7
+    [SIM] iptables -A INPUT -s 10.0.0.98 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.98  score=0.995
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.995  src=10.0.0.98        dev=iot-02
+  98    Mirai          Mirai          0.995  isolate     33.7
+    [SIM] iptables -A INPUT -s 10.0.0.99 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.99  score=0.998
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.998  src=10.0.0.99        dev=iot-03
+  99    Mirai          Mirai          0.998  isolate     36.0
+    [SIM] iptables -A INPUT -s 10.0.0.100 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.100  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.100       dev=iot-04
+  100   Mirai          Mirai          0.999  isolate     31.1
+    [SIM] iptables -A INPUT -s 10.0.0.101 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.101  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.101       dev=iot-05
+  101   Mirai          Mirai          0.999  isolate     44.7
+    [SIM] iptables -A INPUT -s 10.0.0.102 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.102  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.102       dev=iot-06
+  102   Mirai          Mirai          0.999  isolate     35.3
+  📋  [10:27:36]  LOG       Benign          score=1.000  src=10.0.0.103       dev=iot-07
+  103   Benign         Benign         1.000  log         43.9
+    [SIM] iptables -A INPUT -s 10.0.0.104 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.104  score=0.999
+  🔴  [10:27:36]  ISOLATE   Mirai           score=0.999  src=10.0.0.104       dev=iot-08
+  104   Mirai          Mirai          0.999  isolate     33.7
+    [SIM] iptables -A INPUT -s 10.0.0.105 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.105  score=0.875
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.875  src=10.0.0.105       dev=iot-09
+  105   Mirai          Mirai          0.875  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.106 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.106  score=0.999
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.999  src=10.0.0.106       dev=iot-10
+  106   Mirai          Mirai          0.999  isolate     46.1
+    [SIM] iptables -A INPUT -s 10.0.0.107 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.107  score=0.995
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.995  src=10.0.0.107       dev=iot-11
+  107   Mirai          Mirai          0.995  isolate     36.0
+    [SIM] iptables -A INPUT -s 10.0.0.108 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.108  score=0.999
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.999  src=10.0.0.108       dev=iot-12
+  108   Mirai          Mirai          0.999  isolate     33.8
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.109       dev=iot-01
+  109   Benign         Benign         1.000  log         31.8
+    [SIM] iptables -A INPUT -s 10.0.0.110 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.110  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.110       dev=iot-02
+  110   Mirai          Mirai          1.000  isolate     34.6
+    [SIM] iptables -A INPUT -s 10.0.0.111 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.111  score=0.999
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.999  src=10.0.0.111       dev=iot-03
+  111   Mirai          Mirai          0.999  isolate     31.8
+    [SIM] iptables -A INPUT -s 10.0.0.112 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.112  score=0.993
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.993  src=10.0.0.112       dev=iot-04
+  112   Mirai          Mirai          0.993  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.0.113 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — DarkNexus  src=10.0.0.113  score=1.000
+  🔴  [10:27:37]  ISOLATE   DarkNexus       score=1.000  src=10.0.0.113       dev=iot-05
+  113   DarkNexus      DarkNexus      1.000  isolate     33.9
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.114       dev=iot-06
+  114   Benign         Benign         1.000  log         34.6
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.115       dev=iot-07
+  115   Benign         Benign         1.000  log         34.8
+    [SIM] iptables -A INPUT -s 10.0.0.116 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.116  score=0.952
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.952  src=10.0.0.116       dev=iot-08
+  116   Mirai          Mirai          0.952  isolate     32.0
+    [SIM] iptables -A INPUT -s 10.0.0.117 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.117  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.117       dev=iot-09
+  117   Mirai          Mirai          1.000  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.0.118 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.118  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.118       dev=iot-10
+  118   Mirai          Mirai          1.000  isolate     32.7
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.119       dev=iot-11
+  119   Benign         Benign         1.000  log         32.7
+    [SIM] iptables -A INPUT -s 10.0.0.120 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.120  score=0.991
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.991  src=10.0.0.120       dev=iot-12
+  120   Mirai          Mirai          0.991  isolate     34.3
+    [SIM] iptables -A INPUT -s 10.0.0.121 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Unknown  src=10.0.0.121  score=0.988
+  🔴  [10:27:37]  ISOLATE   Unknown         score=0.988  src=10.0.0.121       dev=iot-01
+  121   Unknown        Unknown        0.988  isolate     42.7
+    [SIM] iptables -A INPUT -s 10.0.0.122 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.122  score=0.981
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.981  src=10.0.0.122       dev=iot-02
+  122   Mirai          Mirai          0.981  isolate     43.2
+    [SIM] iptables -A INPUT -s 10.0.0.123 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.123  score=0.990
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.990  src=10.0.0.123       dev=iot-03
+  123   Mirai          Mirai          0.990  isolate     43.8
+    [SIM] iptables -A INPUT -s 10.0.0.124 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.124  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.124       dev=iot-04
+  124   Mirai          Mirai          1.000  isolate     34.8
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.125       dev=iot-05
+  125   Benign         Benign         1.000  log         35.1
+    [SIM] iptables -A INPUT -s 10.0.0.126 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.126  score=0.975
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.975  src=10.0.0.126       dev=iot-06
+  126   Mirai          Mirai          0.975  isolate     34.8
+  📋  [10:27:37]  LOG       Benign          score=1.000  src=10.0.0.127       dev=iot-07
+  127   Benign         Benign         1.000  log         32.2
+    [SIM] iptables -A INPUT -s 10.0.0.128 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.128  score=0.989
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.989  src=10.0.0.128       dev=iot-08
+  128   Mirai          Mirai          0.989  isolate     35.5
+    [SIM] iptables -A INPUT -s 10.0.0.129 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.129  score=0.999
+  🔴  [10:27:37]  ISOLATE   Mirai           score=0.999  src=10.0.0.129       dev=iot-09
+  129   Mirai          Mirai          0.999  isolate     32.4
+    [SIM] iptables -A INPUT -s 10.0.0.130 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.130  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.130       dev=iot-10
+  130   Mirai          Mirai          1.000  isolate     34.7
+    [SIM] iptables -A INPUT -s 10.0.0.131 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.131  score=1.000
+  🔴  [10:27:37]  ISOLATE   Mirai           score=1.000  src=10.0.0.131       dev=iot-11
+  131   Mirai          Mirai          1.000  isolate     30.4
+    [SIM] iptables -A INPUT -s 10.0.0.132 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.132  score=0.999
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.999  src=10.0.0.132       dev=iot-12
+  132   Mirai          Mirai          0.999  isolate     76.9
+    [SIM] iptables -A INPUT -s 10.0.0.133 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.133  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.133       dev=iot-01
+  133   Mirai          Mirai          1.000  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.134 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.134  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.134       dev=iot-02
+  134   Mirai          Mirai          1.000  isolate     43.3
+    [SIM] iptables -A INPUT -s 10.0.0.135 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.135  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.135       dev=iot-03
+  135   Mirai          Mirai          1.000  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.136 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.136  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.136       dev=iot-04
+  136   Mirai          Mirai          1.000  isolate     31.3
+    [SIM] iptables -A INPUT -s 10.0.0.137 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.137  score=0.923
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.923  src=10.0.0.137       dev=iot-05
+  137   Mirai          Mirai          0.923  isolate     33.0
+
+    ⚠️  ALERT — Gafgyt on iot-06  score=0.564  src=10.0.0.138
+  ⚠️   [10:27:38]  ALERT     Gafgyt          score=0.564  src=10.0.0.138       dev=iot-06
+  138   Mirai          Gafgyt         0.564  alert       33.2
+  📋  [10:27:38]  LOG       Benign          score=1.000  src=10.0.0.139       dev=iot-07
+  139   Benign         Benign         1.000  log         44.8
+    [SIM] iptables -A INPUT -s 10.0.0.140 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.140  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.140       dev=iot-08
+  140   Mirai          Mirai          1.000  isolate     33.7
+  📋  [10:27:38]  LOG       Benign          score=1.000  src=10.0.0.141       dev=iot-09
+  141   Benign         Benign         1.000  log         32.9
+    [SIM] iptables -A INPUT -s 10.0.0.142 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.142  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.142       dev=iot-10
+  142   Mirai          Mirai          1.000  isolate     36.7
+    [SIM] iptables -A INPUT -s 10.0.0.143 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.143  score=0.946
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.946  src=10.0.0.143       dev=iot-11
+  143   Mirai          Mirai          0.946  isolate     44.5
+    [SIM] iptables -A INPUT -s 10.0.0.144 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.144  score=0.994
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.994  src=10.0.0.144       dev=iot-12
+  144   Mirai          Mirai          0.994  isolate     33.4
+    [SIM] iptables -A INPUT -s 10.0.0.145 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.145  score=0.978
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.978  src=10.0.0.145       dev=iot-01
+  145   Mirai          Mirai          0.978  isolate     33.3
+    [SIM] iptables -A INPUT -s 10.0.0.146 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.146  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.146       dev=iot-02
+  146   Mirai          Mirai          1.000  isolate     34.7
+    [SIM] iptables -A INPUT -s 10.0.0.147 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.147  score=0.999
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.999  src=10.0.0.147       dev=iot-03
+  147   Mirai          Mirai          0.999  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.0.148 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.148  score=0.955
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.955  src=10.0.0.148       dev=iot-04
+  148   Mirai          Mirai          0.955  isolate     32.6
+    [SIM] iptables -A INPUT -s 10.0.0.149 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.149  score=0.998
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.998  src=10.0.0.149       dev=iot-05
+  149   Mirai          Mirai          0.998  isolate     34.2
+    [SIM] iptables -A INPUT -s 10.0.0.150 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.150  score=0.919
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.919  src=10.0.0.150       dev=iot-06
+  150   Mirai          Mirai          0.919  isolate     32.2
+    [SIM] iptables -A INPUT -s 10.0.0.151 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.151  score=0.999
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.999  src=10.0.0.151       dev=iot-07
+  151   Mirai          Mirai          0.999  isolate     36.0
+    [SIM] iptables -A INPUT -s 10.0.0.152 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.152  score=0.999
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.999  src=10.0.0.152       dev=iot-08
+  152   Mirai          Mirai          0.999  isolate     35.5
+    [SIM] iptables -A INPUT -s 10.0.0.153 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Unknown  src=10.0.0.153  score=0.985
+  🔴  [10:27:38]  ISOLATE   Unknown         score=0.985  src=10.0.0.153       dev=iot-09
+  153   Unknown        Unknown        0.985  isolate     33.9
+    [SIM] iptables -A INPUT -s 10.0.0.154 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.154  score=0.998
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.998  src=10.0.0.154       dev=iot-10
+  154   Mirai          Mirai          0.998  isolate     32.8
+  📋  [10:27:38]  LOG       Benign          score=1.000  src=10.0.0.155       dev=iot-11
+  155   Benign         Benign         1.000  log         31.2
+    [SIM] iptables -A INPUT -s 10.0.0.156 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.156  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.156       dev=iot-12
+  156   Mirai          Mirai          1.000  isolate     43.4
+    [SIM] iptables -A INPUT -s 10.0.0.157 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.157  score=1.000
+  🔴  [10:27:38]  ISOLATE   Mirai           score=1.000  src=10.0.0.157       dev=iot-01
+  157   Mirai          Mirai          1.000  isolate     34.0
+    [SIM] iptables -A INPUT -s 10.0.0.158 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Unknown  src=10.0.0.158  score=0.996
+  🔴  [10:27:38]  ISOLATE   Unknown         score=0.996  src=10.0.0.158       dev=iot-02
+  158   Unknown        Unknown        0.996  isolate     36.9
+    [SIM] iptables -A INPUT -s 10.0.0.159 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.159  score=0.999
+  🔴  [10:27:38]  ISOLATE   Mirai           score=0.999  src=10.0.0.159       dev=iot-03
+  159   Mirai          Mirai          0.999  isolate     32.4
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.160       dev=iot-04
+  160   Benign         Benign         1.000  log         43.5
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.161       dev=iot-05
+  161   Benign         Benign         1.000  log         33.1
+    [SIM] iptables -A INPUT -s 10.0.0.162 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.162  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.162       dev=iot-06
+  162   Mirai          Mirai          1.000  isolate     34.9
+    [SIM] iptables -A INPUT -s 10.0.0.163 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.163  score=0.994
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.994  src=10.0.0.163       dev=iot-07
+  163   Mirai          Mirai          0.994  isolate     43.8
+    [SIM] iptables -A INPUT -s 10.0.0.164 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.164  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.164       dev=iot-08
+  164   Mirai          Mirai          1.000  isolate     42.9
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.165       dev=iot-09
+  165   Benign         Benign         1.000  log         35.3
+    [SIM] iptables -A INPUT -s 10.0.0.166 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.166  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.166       dev=iot-10
+  166   Mirai          Mirai          1.000  isolate     33.6
+    [SIM] iptables -A INPUT -s 10.0.0.167 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.167  score=0.886
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.886  src=10.0.0.167       dev=iot-11
+  167   Mirai          Mirai          0.886  isolate     41.5
+    [SIM] iptables -A INPUT -s 10.0.0.168 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.168  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.168       dev=iot-12
+  168   Mirai          Mirai          1.000  isolate     30.8
+    [SIM] iptables -A INPUT -s 10.0.0.169 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.169  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.169       dev=iot-01
+  169   Mirai          Mirai          1.000  isolate     42.4
+    [SIM] iptables -A INPUT -s 10.0.0.170 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Unknown  src=10.0.0.170  score=0.995
+  🔴  [10:27:39]  ISOLATE   Unknown         score=0.995  src=10.0.0.170       dev=iot-02
+  170   Unknown        Unknown        0.995  isolate     41.5
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.171       dev=iot-03
+  171   Benign         Benign         1.000  log         42.5
+    [SIM] iptables -A INPUT -s 10.0.0.172 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Unknown  src=10.0.0.172  score=0.984
+  🔴  [10:27:39]  ISOLATE   Unknown         score=0.984  src=10.0.0.172       dev=iot-04
+  172   Unknown        Unknown        0.984  isolate     37.0
+    [SIM] iptables -A INPUT -s 10.0.0.173 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.173  score=0.996
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.996  src=10.0.0.173       dev=iot-05
+  173   Mirai          Mirai          0.996  isolate     35.9
+    [SIM] iptables -A INPUT -s 10.0.0.174 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.174  score=0.999
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.999  src=10.0.0.174       dev=iot-06
+  174   Mirai          Mirai          0.999  isolate     34.6
+    [SIM] iptables -A INPUT -s 10.0.0.175 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.175  score=0.974
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.974  src=10.0.0.175       dev=iot-07
+  175   Mirai          Mirai          0.974  isolate     41.2
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.176       dev=iot-08
+  176   Benign         Benign         1.000  log         33.8
+    [SIM] iptables -A INPUT -s 10.0.0.177 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — DarkNexus  src=10.0.0.177  score=0.999
+  🔴  [10:27:39]  ISOLATE   DarkNexus       score=0.999  src=10.0.0.177       dev=iot-09
+  177   DarkNexus      DarkNexus      0.999  isolate     33.0
+    [SIM] iptables -A INPUT -s 10.0.0.178 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.178  score=0.999
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.999  src=10.0.0.178       dev=iot-10
+  178   Mirai          Mirai          0.999  isolate     34.9
+    [SIM] iptables -A INPUT -s 10.0.0.179 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.179  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.179       dev=iot-11
+  179   Mirai          Mirai          1.000  isolate     34.5
+    [SIM] iptables -A INPUT -s 10.0.0.180 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Gafgyt  src=10.0.0.180  score=1.000
+  🔴  [10:27:39]  ISOLATE   Gafgyt          score=1.000  src=10.0.0.180       dev=iot-12
+  180   Gafgyt         Gafgyt         1.000  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.0.181 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — DarkNexus  src=10.0.0.181  score=1.000
+  🔴  [10:27:39]  ISOLATE   DarkNexus       score=1.000  src=10.0.0.181       dev=iot-01
+  181   DarkNexus      DarkNexus      1.000  isolate     33.2
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.182       dev=iot-02
+  182   Benign         Benign         1.000  log         35.2
+    [SIM] iptables -A INPUT -s 10.0.0.183 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.183  score=1.000
+  🔴  [10:27:39]  ISOLATE   Mirai           score=1.000  src=10.0.0.183       dev=iot-03
+  183   Mirai          Mirai          1.000  isolate     32.5
+  📋  [10:27:39]  LOG       Benign          score=1.000  src=10.0.0.184       dev=iot-04
+  184   Benign         Benign         1.000  log         34.2
+    [SIM] iptables -A INPUT -s 10.0.0.185 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.185  score=0.989
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.989  src=10.0.0.185       dev=iot-05
+  185   Mirai          Mirai          0.989  isolate     33.3
+    [SIM] iptables -A INPUT -s 10.0.0.186 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.186  score=0.956
+  🔴  [10:27:39]  ISOLATE   Mirai           score=0.956  src=10.0.0.186       dev=iot-06
+  186   Mirai          Mirai          0.956  isolate     44.6
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.187       dev=iot-07
+  187   Benign         Benign         1.000  log         36.2
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.188       dev=iot-08
+  188   Benign         Benign         1.000  log         31.5
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.189       dev=iot-09
+  189   Benign         Benign         1.000  log         34.9
+    [SIM] iptables -A INPUT -s 10.0.0.190 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.190  score=0.995
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.995  src=10.0.0.190       dev=iot-10
+  190   Mirai          Mirai          0.995  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.191 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.191  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.191       dev=iot-11
+  191   Mirai          Mirai          0.999  isolate     42.9
+    [SIM] iptables -A INPUT -s 10.0.0.192 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.192  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.192       dev=iot-12
+  192   Mirai          Mirai          1.000  isolate     35.6
+    [SIM] iptables -A INPUT -s 10.0.0.193 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.193  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.193       dev=iot-01
+  193   Mirai          Mirai          0.999  isolate     45.0
+    [SIM] iptables -A INPUT -s 10.0.0.194 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.194  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.194       dev=iot-02
+  194   Mirai          Mirai          1.000  isolate     32.3
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.195       dev=iot-03
+  195   Benign         Benign         1.000  log         31.2
+    [SIM] iptables -A INPUT -s 10.0.0.196 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.196  score=0.997
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.997  src=10.0.0.196       dev=iot-04
+  196   Mirai          Mirai          0.997  isolate     34.7
+    [SIM] iptables -A INPUT -s 10.0.0.197 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.197  score=0.996
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.996  src=10.0.0.197       dev=iot-05
+  197   Mirai          Mirai          0.996  isolate     31.9
+    [SIM] iptables -A INPUT -s 10.0.0.198 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.198  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.198       dev=iot-06
+  198   Mirai          Mirai          0.999  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.0.199 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.199  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.199       dev=iot-07
+  199   Mirai          Mirai          1.000  isolate     32.1
+    [SIM] iptables -A INPUT -s 10.0.0.200 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.200  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.200       dev=iot-08
+  200   Mirai          Mirai          1.000  isolate     31.1
+    [SIM] iptables -A INPUT -s 10.0.0.201 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.201  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.201       dev=iot-09
+  201   Mirai          Mirai          1.000  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.0.202 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.202  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.202       dev=iot-10
+  202   Mirai          Mirai          1.000  isolate     33.6
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.203       dev=iot-11
+  203   Benign         Benign         1.000  log         33.9
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.204       dev=iot-12
+  204   Benign         Benign         1.000  log         32.3
+    [SIM] iptables -A INPUT -s 10.0.0.205 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.205  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.205       dev=iot-01
+  205   Mirai          Mirai          0.999  isolate     32.2
+    [SIM] iptables -A INPUT -s 10.0.0.206 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.206  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.206       dev=iot-02
+  206   Mirai          Mirai          1.000  isolate     31.0
+    [SIM] iptables -A INPUT -s 10.0.0.207 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.207  score=0.869
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.869  src=10.0.0.207       dev=iot-03
+  207   Mirai          Mirai          0.869  isolate     33.3
+    [SIM] iptables -A INPUT -s 10.0.0.208 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.208  score=0.997
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.997  src=10.0.0.208       dev=iot-04
+  208   Mirai          Mirai          0.997  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.209 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.209  score=0.968
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.968  src=10.0.0.209       dev=iot-05
+  209   Mirai          Mirai          0.968  isolate     32.1
+    [SIM] iptables -A INPUT -s 10.0.0.210 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.210  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.210       dev=iot-06
+  210   Mirai          Mirai          0.999  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.211 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.211  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.211       dev=iot-07
+  211   Mirai          Mirai          1.000  isolate     34.2
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.212       dev=iot-08
+  212   Benign         Benign         1.000  log         31.2
+    [SIM] iptables -A INPUT -s 10.0.0.213 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.213  score=1.000
+  🔴  [10:27:40]  ISOLATE   Mirai           score=1.000  src=10.0.0.213       dev=iot-09
+  213   Mirai          Mirai          1.000  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.0.214 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.214  score=0.999
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.999  src=10.0.0.214       dev=iot-10
+  214   Mirai          Mirai          0.999  isolate     32.7
+  📋  [10:27:40]  LOG       Benign          score=1.000  src=10.0.0.215       dev=iot-11
+  215   Benign         Benign         1.000  log         33.6
+    [SIM] iptables -A INPUT -s 10.0.0.216 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.216  score=0.998
+  🔴  [10:27:40]  ISOLATE   Mirai           score=0.998  src=10.0.0.216       dev=iot-12
+  216   Mirai          Mirai          0.998  isolate     33.8
+  📋  [10:27:41]  LOG       Benign          score=1.000  src=10.0.0.217       dev=iot-01
+  217   Benign         Benign         1.000  log         34.3
+    [SIM] iptables -A INPUT -s 10.0.0.218 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.218  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.218       dev=iot-02
+  218   Mirai          Mirai          1.000  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.0.219 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — DarkNexus  src=10.0.0.219  score=1.000
+  🔴  [10:27:41]  ISOLATE   DarkNexus       score=1.000  src=10.0.0.219       dev=iot-03
+  219   DarkNexus      DarkNexus      1.000  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.0.220 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.220  score=0.990
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.990  src=10.0.0.220       dev=iot-04
+  220   Mirai          Mirai          0.990  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.0.221 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.0.221  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.221       dev=iot-05
+  221   Mirai          Mirai          1.000  isolate     35.1
+    [SIM] iptables -A INPUT -s 10.0.0.222 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.222  score=0.979
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.979  src=10.0.0.222       dev=iot-06
+  222   Mirai          Mirai          0.979  isolate     33.4
+    [SIM] iptables -A INPUT -s 10.0.0.223 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.223  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.223       dev=iot-07
+  223   Mirai          Mirai          1.000  isolate     33.7
+    [SIM] iptables -A INPUT -s 10.0.0.224 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.224  score=0.989
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.989  src=10.0.0.224       dev=iot-08
+  224   Mirai          Mirai          0.989  isolate     35.1
+    [SIM] iptables -A INPUT -s 10.0.0.225 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.225  score=0.977
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.977  src=10.0.0.225       dev=iot-09
+  225   Mirai          Mirai          0.977  isolate     31.9
+    [SIM] iptables -A INPUT -s 10.0.0.226 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.226  score=0.999
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.999  src=10.0.0.226       dev=iot-10
+  226   Mirai          Mirai          0.999  isolate     31.8
+    [SIM] iptables -A INPUT -s 10.0.0.227 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Gafgyt  src=10.0.0.227  score=1.000
+  🔴  [10:27:41]  ISOLATE   Gafgyt          score=1.000  src=10.0.0.227       dev=iot-11
+  227   Gafgyt         Gafgyt         1.000  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.0.228 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.228  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.228       dev=iot-12
+  228   Mirai          Mirai          1.000  isolate     33.9
+    [SIM] iptables -A INPUT -s 10.0.0.229 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.229  score=0.998
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.998  src=10.0.0.229       dev=iot-01
+  229   Mirai          Mirai          0.998  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.230 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.230  score=0.966
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.966  src=10.0.0.230       dev=iot-02
+  230   Mirai          Mirai          0.966  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.0.231 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.231  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.231       dev=iot-03
+  231   Mirai          Mirai          1.000  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.232 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.232  score=0.999
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.999  src=10.0.0.232       dev=iot-04
+  232   Mirai          Mirai          0.999  isolate     35.0
+    [SIM] iptables -A INPUT -s 10.0.0.233 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Unknown  src=10.0.0.233  score=0.993
+  🔴  [10:27:41]  ISOLATE   Unknown         score=0.993  src=10.0.0.233       dev=iot-05
+  233   Unknown        Unknown        0.993  isolate     31.1
+    [SIM] iptables -A INPUT -s 10.0.0.234 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.234  score=0.997
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.997  src=10.0.0.234       dev=iot-06
+  234   Mirai          Mirai          0.997  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.0.235 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.235  score=0.986
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.986  src=10.0.0.235       dev=iot-07
+  235   Mirai          Mirai          0.986  isolate     43.3
+    [SIM] iptables -A INPUT -s 10.0.0.236 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Mirai  src=10.0.0.236  score=0.999
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.999  src=10.0.0.236       dev=iot-08
+  236   Mirai          Mirai          0.999  isolate     36.2
+    [SIM] iptables -A INPUT -s 10.0.0.237 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Unknown  src=10.0.0.237  score=0.991
+  🔴  [10:27:41]  ISOLATE   Unknown         score=0.991  src=10.0.0.237       dev=iot-09
+  237   Unknown        Unknown        0.991  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.0.238 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.238  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.238       dev=iot-10
+  238   Mirai          Mirai          1.000  isolate     36.3
+    [SIM] iptables -A INPUT -s 10.0.0.239 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.239  score=1.000
+  🔴  [10:27:41]  ISOLATE   Mirai           score=1.000  src=10.0.0.239       dev=iot-11
+  239   Mirai          Mirai          1.000  isolate     33.6
+    [SIM] iptables -A INPUT -s 10.0.0.240 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.240  score=0.998
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.998  src=10.0.0.240       dev=iot-12
+  240   Mirai          Mirai          0.998  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.0.241 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.241  score=0.944
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.944  src=10.0.0.241       dev=iot-01
+  241   Mirai          Mirai          0.944  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.0.242 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.242  score=0.955
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.955  src=10.0.0.242       dev=iot-02
+  242   Mirai          Mirai          0.955  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.0.243 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.0.243  score=0.987
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.987  src=10.0.0.243       dev=iot-03
+  243   Mirai          Mirai          0.987  isolate     31.3
+    [SIM] iptables -A INPUT -s 10.0.0.244 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.0.244  score=0.952
+  🔴  [10:27:41]  ISOLATE   Mirai           score=0.952  src=10.0.0.244       dev=iot-04
+  244   Mirai          Mirai          0.952  isolate     34.7
+  📋  [10:27:41]  LOG       Benign          score=1.000  src=10.0.0.245       dev=iot-05
+  245   Benign         Benign         1.000  log         34.3
+    [SIM] iptables -A INPUT -s 10.0.0.246 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.0.246  score=0.999
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.999  src=10.0.0.246       dev=iot-06
+  246   Mirai          Mirai          0.999  isolate     44.8
+    [SIM] iptables -A INPUT -s 10.0.0.247 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.0.247  score=0.998
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.998  src=10.0.0.247       dev=iot-07
+  247   Mirai          Mirai          0.998  isolate     32.7
+  📋  [10:27:42]  LOG       Benign          score=1.000  src=10.0.0.248       dev=iot-08
+  248   Benign         Benign         1.000  log         35.1
+    [SIM] iptables -A INPUT -s 10.0.0.249 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.0.249  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.0.249       dev=iot-09
+  249   Mirai          Mirai          1.000  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.0.250 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.0.250  score=0.999
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.999  src=10.0.0.250       dev=iot-10
+  250   Mirai          Mirai          0.999  isolate     44.0
+    [SIM] iptables -A INPUT -s 10.0.0.251 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.0.251  score=0.967
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.967  src=10.0.0.251       dev=iot-11
+  251   Mirai          Mirai          0.967  isolate     35.4
+    [SIM] iptables -A INPUT -s 10.0.0.252 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.0.252  score=0.833
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.833  src=10.0.0.252       dev=iot-12
+  252   Mirai          Mirai          0.833  isolate     35.0
+    [SIM] iptables -A INPUT -s 10.0.0.253 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.0.253  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.0.253       dev=iot-01
+  253   Mirai          Mirai          1.000  isolate     43.7
+    [SIM] iptables -A INPUT -s 10.0.0.254 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.0.254  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.0.254       dev=iot-02
+  254   Mirai          Mirai          1.000  isolate     34.1
+    [SIM] iptables -A INPUT -s 10.0.1.1 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.1.1  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.1.1         dev=iot-03
+  255   Mirai          Mirai          1.000  isolate     34.8
+    [SIM] iptables -A INPUT -s 10.0.1.2 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.1.2  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.1.2         dev=iot-04
+  256   Mirai          Mirai          1.000  isolate     34.6
+  📋  [10:27:42]  LOG       Benign          score=1.000  src=10.0.1.3         dev=iot-05
+  257   Benign         Benign         1.000  log         43.9
+    [SIM] iptables -A INPUT -s 10.0.1.4 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.1.4  score=0.928
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.928  src=10.0.1.4         dev=iot-06
+  258   Mirai          Mirai          0.928  isolate     34.8
+    [SIM] iptables -A INPUT -s 10.0.1.5 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.1.5  score=0.952
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.952  src=10.0.1.5         dev=iot-07
+  259   Mirai          Mirai          0.952  isolate     34.6
+    [SIM] iptables -A INPUT -s 10.0.1.6 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — DarkNexus  src=10.0.1.6  score=0.999
+  🔴  [10:27:42]  ISOLATE   DarkNexus       score=0.999  src=10.0.1.6         dev=iot-08
+  260   DarkNexus      DarkNexus      0.999  isolate     34.3
+  📋  [10:27:42]  LOG       Benign          score=1.000  src=10.0.1.7         dev=iot-09
+  261   Benign         Benign         1.000  log         35.3
+    [SIM] iptables -A INPUT -s 10.0.1.8 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.1.8  score=0.995
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.995  src=10.0.1.8         dev=iot-10
+  262   Mirai          Mirai          0.995  isolate     33.7
+  📋  [10:27:42]  LOG       Benign          score=1.000  src=10.0.1.9         dev=iot-11
+  263   Benign         Benign         1.000  log         34.2
+    [SIM] iptables -A INPUT -s 10.0.1.10 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.1.10  score=0.976
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.976  src=10.0.1.10        dev=iot-12
+  264   Mirai          Mirai          0.976  isolate     43.1
+    [SIM] iptables -A INPUT -s 10.0.1.11 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Mirai  src=10.0.1.11  score=0.997
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.997  src=10.0.1.11        dev=iot-01
+  265   Mirai          Mirai          0.997  isolate     34.7
+    [SIM] iptables -A INPUT -s 10.0.1.12 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.1.12  score=0.999
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.999  src=10.0.1.12        dev=iot-02
+  266   Mirai          Mirai          0.999  isolate     31.9
+    [SIM] iptables -A INPUT -s 10.0.1.13 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.1.13  score=1.000
+  🔴  [10:27:42]  ISOLATE   Mirai           score=1.000  src=10.0.1.13        dev=iot-03
+  267   Mirai          Mirai          1.000  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.1.14 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.1.14  score=0.997
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.997  src=10.0.1.14        dev=iot-04
+  268   Mirai          Mirai          0.997  isolate     35.0
+    [SIM] iptables -A INPUT -s 10.0.1.15 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.1.15  score=0.998
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.998  src=10.0.1.15        dev=iot-05
+  269   Mirai          Mirai          0.998  isolate     32.4
+    [SIM] iptables -A INPUT -s 10.0.1.16 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.1.16  score=0.999
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.999  src=10.0.1.16        dev=iot-06
+  270   Mirai          Mirai          0.999  isolate     42.8
+  📋  [10:27:42]  LOG       Benign          score=1.000  src=10.0.1.17        dev=iot-07
+  271   Benign         Benign         1.000  log         34.7
+    [SIM] iptables -A INPUT -s 10.0.1.18 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Gafgyt  src=10.0.1.18  score=1.000
+  🔴  [10:27:42]  ISOLATE   Gafgyt          score=1.000  src=10.0.1.18        dev=iot-08
+  272   Gafgyt         Gafgyt         1.000  isolate     33.8
+    [SIM] iptables -A INPUT -s 10.0.1.19 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.1.19  score=0.985
+  🔴  [10:27:42]  ISOLATE   Mirai           score=0.985  src=10.0.1.19        dev=iot-09
+  273   Mirai          Mirai          0.985  isolate     32.0
+    [SIM] iptables -A INPUT -s 10.0.1.20 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.1.20  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.20        dev=iot-10
+  274   Mirai          Mirai          1.000  isolate     33.5
+    [SIM] iptables -A INPUT -s 10.0.1.21 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.1.21  score=0.983
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.983  src=10.0.1.21        dev=iot-11
+  275   Mirai          Mirai          0.983  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.1.22 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.1.22  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.22        dev=iot-12
+  276   Mirai          Mirai          1.000  isolate     32.6
+  📋  [10:27:43]  LOG       Benign          score=1.000  src=10.0.1.23        dev=iot-01
+  277   Benign         Benign         1.000  log         34.7
+    [SIM] iptables -A INPUT -s 10.0.1.24 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.1.24  score=0.986
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.986  src=10.0.1.24        dev=iot-02
+  278   Mirai          Mirai          0.986  isolate     32.5
+    [SIM] iptables -A INPUT -s 10.0.1.25 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.1.25  score=0.999
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.999  src=10.0.1.25        dev=iot-03
+  279   Mirai          Mirai          0.999  isolate     33.1
+    [SIM] iptables -A INPUT -s 10.0.1.26 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Mirai  src=10.0.1.26  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.26        dev=iot-04
+  280   Mirai          Mirai          1.000  isolate     34.4
+    [SIM] iptables -A INPUT -s 10.0.1.27 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Gafgyt  src=10.0.1.27  score=1.000
+  🔴  [10:27:43]  ISOLATE   Gafgyt          score=1.000  src=10.0.1.27        dev=iot-05
+  281   Gafgyt         Gafgyt         1.000  isolate     34.7
+    [SIM] iptables -A INPUT -s 10.0.1.28 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.1.28  score=0.999
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.999  src=10.0.1.28        dev=iot-06
+  282   Mirai          Mirai          0.999  isolate     32.5
+    [SIM] iptables -A INPUT -s 10.0.1.29 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.1.29  score=0.993
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.993  src=10.0.1.29        dev=iot-07
+  283   Mirai          Mirai          0.993  isolate     44.9
+    [SIM] iptables -A INPUT -s 10.0.1.30 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-08 (eth0 down) — Unknown  src=10.0.1.30  score=1.000
+  🔴  [10:27:43]  ISOLATE   Unknown         score=1.000  src=10.0.1.30        dev=iot-08
+  284   Unknown        Unknown        1.000  isolate     34.6
+    [SIM] iptables -A INPUT -s 10.0.1.31 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.1.31  score=0.996
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.996  src=10.0.1.31        dev=iot-09
+  285   Mirai          Mirai          0.996  isolate     33.0
+    [SIM] iptables -A INPUT -s 10.0.1.32 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Generic  src=10.0.1.32  score=1.000
+  🔴  [10:27:43]  ISOLATE   Generic         score=1.000  src=10.0.1.32        dev=iot-10
+  286   Generic        Generic        1.000  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.1.33 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.1.33  score=0.999
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.999  src=10.0.1.33        dev=iot-11
+  287   Mirai          Mirai          0.999  isolate     33.4
+    [SIM] iptables -A INPUT -s 10.0.1.34 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.1.34  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.34        dev=iot-12
+  288   Mirai          Mirai          1.000  isolate     33.9
+    [SIM] iptables -A INPUT -s 10.0.1.35 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-01 (eth0 down) — Unknown  src=10.0.1.35  score=0.996
+  🔴  [10:27:43]  ISOLATE   Unknown         score=0.996  src=10.0.1.35        dev=iot-01
+  289   Unknown        Unknown        0.996  isolate     34.5
+    [SIM] iptables -A INPUT -s 10.0.1.36 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-02 (eth0 down) — Mirai  src=10.0.1.36  score=0.999
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.999  src=10.0.1.36        dev=iot-02
+  290   Mirai          Mirai          0.999  isolate     33.4
+    [SIM] iptables -A INPUT -s 10.0.1.37 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-03 (eth0 down) — Mirai  src=10.0.1.37  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.37        dev=iot-03
+  291   Mirai          Mirai          1.000  isolate     32.3
+    [SIM] iptables -A INPUT -s 10.0.1.38 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-04 (eth0 down) — Unknown  src=10.0.1.38  score=0.997
+  🔴  [10:27:43]  ISOLATE   Unknown         score=0.997  src=10.0.1.38        dev=iot-04
+  292   Unknown        Unknown        0.997  isolate     32.4
+    [SIM] iptables -A INPUT -s 10.0.1.39 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-05 (eth0 down) — Mirai  src=10.0.1.39  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.39        dev=iot-05
+  293   Mirai          Mirai          1.000  isolate     32.9
+    [SIM] iptables -A INPUT -s 10.0.1.40 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-06 (eth0 down) — Mirai  src=10.0.1.40  score=0.975
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.975  src=10.0.1.40        dev=iot-06
+  294   Mirai          Mirai          0.975  isolate     33.2
+    [SIM] iptables -A INPUT -s 10.0.1.41 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-07 (eth0 down) — Mirai  src=10.0.1.41  score=1.000
+  🔴  [10:27:43]  ISOLATE   Mirai           score=1.000  src=10.0.1.41        dev=iot-07
+  295   Mirai          Mirai          1.000  isolate     31.3
+  📋  [10:27:43]  LOG       Benign          score=1.000  src=10.0.1.42        dev=iot-08
+  296   Benign         Benign         1.000  log         32.8
+    [SIM] iptables -A INPUT -s 10.0.1.43 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-09 (eth0 down) — Mirai  src=10.0.1.43  score=0.988
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.988  src=10.0.1.43        dev=iot-09
+  297   Mirai          Mirai          0.988  isolate     32.8
+    [SIM] iptables -A INPUT -s 10.0.1.44 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-10 (eth0 down) — Mirai  src=10.0.1.44  score=0.952
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.952  src=10.0.1.44        dev=iot-10
+  298   Mirai          Mirai          0.952  isolate     45.8
+    [SIM] iptables -A INPUT -s 10.0.1.45 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-11 (eth0 down) — Mirai  src=10.0.1.45  score=0.974
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.974  src=10.0.1.45        dev=iot-11
+  299   Mirai          Mirai          0.974  isolate     32.7
+    [SIM] iptables -A INPUT -s 10.0.1.46 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-12 (eth0 down) — Mirai  src=10.0.1.46  score=0.994
+  🔴  [10:27:43]  ISOLATE   Mirai           score=0.994  src=10.0.1.46        dev=iot-12
+  300   Mirai          Mirai          0.994  isolate     32.9
+
+
+=================================================================
+  RESULTS
+=================================================================
+
+  Samples processed  : 300
+  Avg latency        : 35.4 ms  (P95=44.6 ms, max=76.9 ms)
+  → IoT target <50ms : ✓ PASS
+
+  Action breakdown:
+    log           54  ( 18.0%)  █████████
+    alert          1  (  0.3%)  
+    block          0  (  0.0%)  
+    isolate      245  ( 81.7%)  ████████████████████████████████████████
+
+  Predicted families:
+    Mirai              213  ( 71.0%)
+    Benign              54  ( 18.0%)
+    Unknown             19  (  6.3%)
+    DarkNexus            7  (  2.3%)
+    Gafgyt               6  (  2.0%)
+    Generic              1  (  0.3%)
+
+  ┌──────────────────────────────────────────────────────┐
+  │  Containment rate (RQ 2.3)                           │
+  │  245/246 attacks blocked or isolated                    │
+  │  Rate: 99.6%                                         │
+  └──────────────────────────────────────────────────────┘
+
+  Audit log: outputs/audit_log.jsonl
+
+=================================================================
+  AUDIT SUMMARY
+=================================================================
+  Total decisions : 300
+  Actions         : {'isolate': 245, 'log': 54, 'alert': 1}
+  Families        : {'Mirai': 213, 'Benign': 54, 'Unknown': 19, 'DarkNexus': 7, 'Gafgyt': 6, 'Generic': 1}

@@ -1,0 +1,66 @@
+
+=================================================================
+  Agentic AI IDS for IoT
+  Phase 3 — Autonomous Detection and Response
+  Dataset: CIC-YNU-IoTMal  |  Architecture: X86
+=================================================================
+  [Detector] Loading model ...
+  [Detector] Ready  —  6 classes  ·  402 features
+  [ResponseAgent] Mode: SIMULATED (safe)
+
+=================================================================
+  DEMO  —  one real sample per malware family
+=================================================================
+
+  Loading fused test features to find family examples ...
+  [DataLoader] Loading fused test CSV (402 features): fused_pcap_test.csv
+  [DataLoader] Loaded: 10,000 rows × 403 columns
+  [DataLoader] Feature columns: 402
+
+  ── Sample 1  |  True family: Mirai
+    [SIM] iptables -A INPUT -s 172.16.0.7 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED router-05 (eth0 down) — Mirai  src=172.16.0.7  score=0.934
+  🔴  [10:38:27]  ISOLATE   Mirai           score=0.934  src=172.16.0.7       dev=router-05
+
+  ── Sample 2  |  True family: Benign
+  📋  [10:38:27]  LOG       Benign          score=1.000  src=192.168.1.10     dev=smart-tv-01
+
+  ── Sample 3  |  True family: Unknown
+    [SIM] iptables -A INPUT -s 192.168.2.1 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED iot-hub-06 (eth0 down) — Unknown  src=192.168.2.1  score=0.999
+  🔴  [10:38:27]  ISOLATE   Unknown         score=0.999  src=192.168.2.1      dev=iot-hub-06
+
+  ── Sample 4  |  True family: DarkNexus
+    [SIM] iptables -A INPUT -s 192.168.1.55 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED ip-camera-02 (eth0 down) — DarkNexus  src=192.168.1.55  score=0.999
+  🔴  [10:38:27]  ISOLATE   DarkNexus       score=0.999  src=192.168.1.55     dev=ip-camera-02
+
+  ── Sample 5  |  True family: Gafgyt
+    [SIM] iptables -A INPUT -s 10.0.0.22 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED smart-lock-03 (eth0 down) — Gafgyt  src=10.0.0.22  score=1.000
+  🔴  [10:38:27]  ISOLATE   Gafgyt          score=1.000  src=10.0.0.22        dev=smart-lock-03
+
+  ── Sample 6  |  True family: Generic
+    [SIM] iptables -A INPUT -s 10.0.0.88 -j DROP
+    [SIM] ip link set eth0 down
+
+    🔴  ISOLATED smart-bulb-04 (eth0 down) — Generic  src=10.0.0.88  score=1.000
+  🔴  [10:38:27]  ISOLATE   Generic         score=1.000  src=10.0.0.88        dev=smart-bulb-04
+
+
+  Demo complete.  Audit log: outputs/audit_log.jsonl
+
+=================================================================
+  AUDIT SUMMARY
+=================================================================
+  Total decisions : 6
+  Actions         : {'isolate': 5, 'log': 1}
+  Families        : {'Mirai': 1, 'Benign': 1, 'Unknown': 1, 'DarkNexus': 1, 'Gafgyt': 1, 'Generic': 1}

@@ -1,0 +1,42 @@
+
+[EDA] Reading preprocessed CSVs from ./outputs/
+
+── PCAP ──────────────────────────────────────────────────────
+  Saved: ./outputs/eda_plots/pcap_class_dist.png
+  Saved: ./outputs/eda_plots/pcap_top_features.png
+  Saved: ./outputs/eda_plots/pcap_correlation.png
+  Highly correlated pairs (|r| ≥ 0.95) — consider dropping one:
+    IPv                                      ↔  LLC                                       r=1.000
+    ARP                                      ↔  LLC                                       r=-1.000
+    ARP                                      ↔  IPv                                       r=-1.000
+    AVG                                      ↔  Tot size                                  r=1.000
+    fin_count                                ↔  fin_flag_number                           r=1.000
+    rst_flag_number                          ↔  rst_count                                 r=1.000
+    syn_count                                ↔  syn_flag_number                           r=0.999
+    Tot size                                 ↔  Tot sum                                   r=0.989
+    AVG                                      ↔  Tot sum                                   r=0.989
+    rst_flag_number                          ↔  ack_flag_number                           r=0.970
+
+── SAR ───────────────────────────────────────────────────────
+  Saved: ./outputs/eda_plots/sar_class_dist.png
+  Saved: ./outputs/eda_plots/sar_correlation.png
+  Highly correlated pairs (|r| ≥ 0.95) — consider dropping one:
+    interrupts[4].CPU0                       ↔  interrupts[3].CPU0                        r=1.000
+    disk[0].rkB                              ↔  disk[0].rd_sec                            r=1.000
+    network.net-ip.fragok                    ↔  network.net-ip.fragcrt                    r=0.999
+    network.net-udp.odgm                     ↔  network.net-udp.idgm                      r=0.982
+  Saved: ./outputs/eda_plots/sar_resource_boxplots.png
+
+[EDA] All plots saved to ./outputs/eda_plots/
+
+  What to look for before Phase 2:
+  ┌─────────────────────────────────────────────────────────────┐
+  │ class_dist      → still imbalanced after SMOTE?            │
+  │ top_features    → near-zero variance features → safe to drop│
+  │ correlation     → |r| ≥ 0.95 pairs → drop one from each    │
+  │ sar_boxplots    → do metrics differ clearly across families?│
+  │                   if all boxes overlap → SAR adds low signal│
+  └─────────────────────────────────────────────────────────────┘
+
+  Next step:  python phase2_models.py
+

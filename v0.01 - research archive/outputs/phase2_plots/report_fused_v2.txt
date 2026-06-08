@@ -1,0 +1,16 @@
+Scenario: fused_v2 (row-level join)
+Accuracy : 0.9946
+F1 macro : 0.9766
+
+              precision    recall  f1-score   support
+
+      Benign       1.00      1.00      1.00     16525
+   DarkNexus       1.00      1.00      1.00      1988
+      Gafgyt       0.77      0.99      0.87      1533
+     Generic       1.00      1.00      1.00       815
+       Mirai       1.00      0.99      1.00     63962
+     Unknown       1.00      1.00      1.00      6306
+
+    accuracy                           0.99     91129
+   macro avg       0.96      1.00      0.98     91129
+weighted avg       1.00      0.99      0.99     91129

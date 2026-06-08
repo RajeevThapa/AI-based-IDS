@@ -1,0 +1,546 @@
+
+=================================================================
+  Loading PCAP and SAR
+=================================================================
+  Reading PCAP from ./dataset/X86/pcap.csv ...
+  Done — 455,641 rows  42 columns
+  Reading SAR from ./dataset/X86/sar.csv ...
+  Done — 529,212 rows  411 columns
+
+─────────────────────────────────────────────────────────────────
+  X86 / PCAP
+─────────────────────────────────────────────────────────────────
+  Shape   : (455641, 42)
+  Memory  : 242.1 MB
+  Dtypes  : {dtype('float64'): np.int64(30), dtype('int64'): np.int64(9), <StringDtype(storage='python', na_value=nan)>: np.int64(3)}
+  Missing values (top 10):
+    Std                                              483  (0.1%)
+    Variance                                         483  (0.1%)
+  Inf values     : 483 ← will be replaced with NaN during preprocessing
+
+  Label distribution  (total 455,641 rows):
+    Mirai                       319,808  ( 70.2%)  ███████████████████████████████████
+    Benign                       82,622  ( 18.1%)  █████████
+    Unknown                      31,531  (  6.9%)  ███
+    DarkNexus                     9,938  (  2.2%)  █
+    Gafgyt                        7,666  (  1.7%)  
+    Generic                       4,076  (  0.9%)  
+
+  Imbalance ratio : 78.5x  (largest / smallest class)
+  [!] High imbalance detected — SMOTE recommended
+
+─────────────────────────────────────────────────────────────────
+  X86 / SAR
+─────────────────────────────────────────────────────────────────
+  Shape   : (529212, 411)
+  Memory  : 2626.3 MB
+  Dtypes  : {dtype('float64'): np.int64(317), dtype('int64'): np.int64(58), <StringDtype(storage='python', na_value=nan)>: np.int64(36)}
+  Missing values (top 10):
+    interrupts[28].intr                               35  (0.0%)
+    network.net-edev[2].rxfram                         3  (0.0%)
+    network.net-edev[2].rxerr                          3  (0.0%)
+    network.net-edev[2].iface                          3  (0.0%)
+    network.net-edev[2].rxfifo                         3  (0.0%)
+    network.net-edev[2].txfifo                         3  (0.0%)
+    network.net-edev[2].coll                           3  (0.0%)
+    network.net-edev[2].txcarr                         3  (0.0%)
+    network.net-edev[2].txdrop                         3  (0.0%)
+    network.net-edev[2].rxdrop                         3  (0.0%)
+  Inf values     : 0
+
+  Label distribution  (total 529,212 rows):
+    Benign                      307,852  ( 58.2%)  ███████████████████████████████████
+    Mirai                       192,440  ( 36.4%)  █████████████████████
+    Unknown                      20,570  (  3.9%)  ██
+    DarkNexus                     6,000  (  1.1%)  
+    Generic                       1,440  (  0.3%)  
+    Gafgyt                          910  (  0.2%)  
+
+  Imbalance ratio : 338.3x  (largest / smallest class)
+  [!] High imbalance detected — SMOTE recommended
+
+
+=================================================================
+  COLUMN DETAILS
+=================================================================
+
+  All columns — PCAP  (42 total)
+   idx  column name                                    dtype           non-null  sample
+  ────  ─────────────────────────────────────────────  ────────────  ──────────  ─────────────────────────
+  [  0]  Header_Length                                  float64          455,641  7.2
+  [  1]  Protocol Type                                  int64            455,641  17
+  [  2]  Time_To_Live                                   float64          455,641  61.2
+  [  3]  Rate                                           float64          455,641  8.70662261498593
+  [  4]  fin_flag_number                                float64          455,641  0.0
+  [  5]  syn_flag_number                                float64          455,641  0.0
+  [  6]  rst_flag_number                                float64          455,641  0.0
+  [  7]  psh_flag_number                                float64          455,641  0.0
+  [  8]  ack_flag_number                                float64          455,641  0.0
+  [  9]  ece_flag_number                                float64          455,641  0.0
+  [ 10]  cwr_flag_number                                float64          455,641  0.0
+  [ 11]  ack_count                                      int64            455,641  0
+  [ 12]  syn_count                                      int64            455,641  0
+  [ 13]  fin_count                                      int64            455,641  0
+  [ 14]  rst_count                                      int64            455,641  0
+  [ 15]  HTTP                                           float64          455,641  0.0
+  [ 16]  HTTPS                                          float64          455,641  0.0
+  [ 17]  DNS                                            float64          455,641  0.0
+  [ 18]  Telnet                                         float64          455,641  0.0
+  [ 19]  SMTP                                           float64          455,641  0.0
+  [ 20]  SSH                                            float64          455,641  0.0
+  [ 21]  IRC                                            float64          455,641  0.0
+  [ 22]  TCP                                            float64          455,641  0.0
+  [ 23]  UDP                                            float64          455,641  0.9
+  [ 24]  DHCP                                           float64          455,641  0.3
+  [ 25]  ARP                                            float64          455,641  0.0
+  [ 26]  ICMP                                           float64          455,641  0.1
+  [ 27]  IGMP                                           float64          455,641  0.0
+  [ 28]  IPv                                            float64          455,641  1.0
+  [ 29]  LLC                                            float64          455,641  1.0
+  [ 30]  Tot sum                                        int64            455,641  1684
+  [ 31]  Min                                            int64            455,641  90
+  [ 32]  Max                                            int64            455,641  342
+  [ 33]  AVG                                            float64          455,641  168.4
+  [ 34]  Std                                            float64          455,158  120.1066193013524
+  [ 35]  Tot size                                       float64          455,641  168.4
+  [ 36]  IAT                                            float64          455,641  0.1148550987243652
+  [ 37]  Number                                         int64            455,641  10
+  [ 38]  Variance                                       float64          455,158  14425.6
+  [ 39]  Hash                                           str              455,641  85f4c8ed3d1640f8b9ddc5722
+  [ 40]  MalwareFamily                                  str              455,641  Benign
+  [ 41]  Arch                                           str              455,641  x86
+
+  All columns — SAR  (411 total)
+   idx  column name                                    dtype           non-null  sample
+  ────  ─────────────────────────────────────────────  ────────────  ──────────  ─────────────────────────
+  [  0]  timestamp                                      str              529,212  2026-01-16 00:13:05
+  [  1]  interval                                       int64            529,212  1
+  [  2]  cpu-load[0].cpu                                str              529,212  all
+  [  3]  cpu-load[0].usr                                float64          529,212  56.44
+  [  4]  cpu-load[0].nice                               float64          529,212  0.0
+  [  5]  cpu-load[0].sys                                float64          529,212  43.56
+  [  6]  cpu-load[0].iowait                             float64          529,212  0.0
+  [  7]  cpu-load[0].steal                              float64          529,212  0.0
+  [  8]  cpu-load[0].irq                                float64          529,212  0.0
+  [  9]  cpu-load[0].soft                               float64          529,212  0.0
+  [ 10]  cpu-load[0].guest                              float64          529,212  0.0
+  [ 11]  cpu-load[0].gnice                              float64          529,212  0.0
+  [ 12]  cpu-load[0].idle                               float64          529,212  0.0
+  [ 13]  cpu-load[1].cpu                                int64            529,212  0
+  [ 14]  cpu-load[1].usr                                float64          529,212  56.44
+  [ 15]  cpu-load[1].nice                               float64          529,212  0.0
+  [ 16]  cpu-load[1].sys                                float64          529,212  43.56
+  [ 17]  cpu-load[1].iowait                             float64          529,212  0.0
+  [ 18]  cpu-load[1].steal                              float64          529,212  0.0
+  [ 19]  cpu-load[1].irq                                float64          529,212  0.0
+  [ 20]  cpu-load[1].soft                               float64          529,212  0.0
+  [ 21]  cpu-load[1].guest                              float64          529,212  0.0
+  [ 22]  cpu-load[1].gnice                              float64          529,212  0.0
+  [ 23]  cpu-load[1].idle                               float64          529,212  0.0
+  [ 24]  process-and-context-switch.proc                float64          529,212  36.63
+  [ 25]  process-and-context-switch.cswch               float64          529,212  621.78
+  [ 26]  interrupts[0].intr                             str              529,212  sum
+  [ 27]  interrupts[0].all                              float64          529,212  125.74
+  [ 28]  interrupts[0].CPU0                             float64          529,212  125.74
+  [ 29]  interrupts[1].intr                             int64            529,212  0
+  [ 30]  interrupts[1].all                              float64          529,212  0.0
+  [ 31]  interrupts[1].CPU0                             float64          529,212  0.0
+  [ 32]  interrupts[2].intr                             int64            529,212  1
+  [ 33]  interrupts[2].all                              float64          529,212  0.0
+  [ 34]  interrupts[2].CPU0                             float64          529,212  0.0
+  [ 35]  interrupts[3].intr                             int64            529,212  4
+  [ 36]  interrupts[3].all                              float64          529,212  7.92
+  [ 37]  interrupts[3].CPU0                             float64          529,212  7.92
+  [ 38]  interrupts[4].intr                             int64            529,212  8
+  [ 39]  interrupts[4].all                              float64          529,212  0.0
+  [ 40]  interrupts[4].CPU0                             float64          529,212  0.0
+  [ 41]  interrupts[5].intr                             int64            529,212  9
+  [ 42]  interrupts[5].all                              float64          529,212  0.0
+  [ 43]  interrupts[5].CPU0                             float64          529,212  0.0
+  [ 44]  interrupts[6].intr                             int64            529,212  11
+  [ 45]  interrupts[6].all                              float64          529,212  6.93
+  [ 46]  interrupts[6].CPU0                             float64          529,212  6.93
+  [ 47]  interrupts[7].intr                             int64            529,212  12
+  [ 48]  interrupts[7].all                              float64          529,212  0.0
+  [ 49]  interrupts[7].CPU0                             float64          529,212  0.0
+  [ 50]  interrupts[8].intr                             int64            529,212  14
+  [ 51]  interrupts[8].all                              float64          529,212  3.96
+  [ 52]  interrupts[8].CPU0                             float64          529,212  3.96
+  [ 53]  interrupts[9].intr                             str              529,212  15
+  [ 54]  interrupts[9].all                              float64          529,212  0.0
+  [ 55]  interrupts[9].CPU0                             float64          529,212  0.0
+  [ 56]  interrupts[10].intr                            str              529,212  NMI
+  [ 57]  interrupts[10].all                             float64          529,212  0.0
+  [ 58]  interrupts[10].CPU0                            float64          529,212  0.0
+  [ 59]  interrupts[11].intr                            str              529,212  LOC
+  [ 60]  interrupts[11].all                             float64          529,212  106.93
+  [ 61]  interrupts[11].CPU0                            float64          529,212  106.93
+  [ 62]  interrupts[12].intr                            str              529,212  SPU
+  [ 63]  interrupts[12].all                             float64          529,212  0.0
+  [ 64]  interrupts[12].CPU0                            float64          529,212  0.0
+  [ 65]  interrupts[13].intr                            str              529,212  PMI
+  [ 66]  interrupts[13].all                             float64          529,212  0.0
+  [ 67]  interrupts[13].CPU0                            float64          529,212  0.0
+  [ 68]  interrupts[14].intr                            str              529,212  IWI
+  [ 69]  interrupts[14].all                             float64          529,212  0.0
+  [ 70]  interrupts[14].CPU0                            float64          529,212  0.0
+  [ 71]  interrupts[15].intr                            str              529,212  RTR
+  [ 72]  interrupts[15].all                             float64          529,212  0.0
+  [ 73]  interrupts[15].CPU0                            float64          529,212  0.0
+  [ 74]  interrupts[16].intr                            str              529,212  RES
+  [ 75]  interrupts[16].all                             float64          529,212  0.0
+  [ 76]  interrupts[16].CPU0                            float64          529,212  0.0
+  [ 77]  interrupts[17].intr                            str              529,212  CAL
+  [ 78]  interrupts[17].all                             float64          529,212  0.0
+  [ 79]  interrupts[17].CPU0                            float64          529,212  0.0
+  [ 80]  interrupts[18].intr                            str              529,212  TLB
+  [ 81]  interrupts[18].all                             float64          529,212  0.0
+  [ 82]  interrupts[18].CPU0                            float64          529,212  0.0
+  [ 83]  interrupts[19].intr                            str              529,212  TRM
+  [ 84]  interrupts[19].all                             float64          529,212  0.0
+  [ 85]  interrupts[19].CPU0                            float64          529,212  0.0
+  [ 86]  interrupts[20].intr                            str              529,212  THR
+  [ 87]  interrupts[20].all                             float64          529,212  0.0
+  [ 88]  interrupts[20].CPU0                            float64          529,212  0.0
+  [ 89]  interrupts[21].intr                            str              529,212  DFR
+  [ 90]  interrupts[21].all                             float64          529,212  0.0
+  [ 91]  interrupts[21].CPU0                            float64          529,212  0.0
+  [ 92]  interrupts[22].intr                            str              529,212  MCE
+  [ 93]  interrupts[22].all                             float64          529,212  0.0
+  [ 94]  interrupts[22].CPU0                            float64          529,212  0.0
+  [ 95]  interrupts[23].intr                            str              529,212  MCP
+  [ 96]  interrupts[23].all                             float64          529,212  0.0
+  [ 97]  interrupts[23].CPU0                            float64          529,212  0.0
+  [ 98]  interrupts[24].intr                            str              529,212  ERR
+  [ 99]  interrupts[24].all                             float64          529,212  0.0
+  [100]  interrupts[24].CPU0                            float64          529,212  0.0
+  [101]  interrupts[25].intr                            str              529,212  MIS
+  [102]  interrupts[25].all                             float64          529,212  0.0
+  [103]  interrupts[25].CPU0                            float64          529,212  0.0
+  [104]  interrupts[26].intr                            str              529,212  PIN
+  [105]  interrupts[26].all                             float64          529,212  0.0
+  [106]  interrupts[26].CPU0                            float64          529,212  0.0
+  [107]  interrupts[27].intr                            str              529,212  NPI
+  [108]  interrupts[27].all                             float64          529,212  0.0
+  [109]  interrupts[27].CPU0                            float64          529,212  0.0
+  [110]  interrupts[28].intr                            str              529,177  PIW
+  [111]  interrupts[28].all                             float64          529,212  0.0
+  [112]  interrupts[28].CPU0                            float64          529,212  0.0
+  [113]  swap-pages.pswpin                              float64          529,212  0.0
+  [114]  swap-pages.pswpout                             float64          529,212  0.0
+  [115]  paging.pgpgin                                  float64          529,212  162.38
+  [116]  paging.pgpgout                                 float64          529,212  0.0
+  [117]  paging.fault                                   float64          529,212  3144.55
+  [118]  paging.majflt                                  float64          529,212  1.98
+  [119]  paging.pgfree                                  float64          529,212  1909.9
+  [120]  paging.pgscank                                 float64          529,212  0.0
+  [121]  paging.pgscand                                 float64          529,212  0.0
+  [122]  paging.pgsteal                                 float64          529,212  0.0
+  [123]  paging.pgprom                                  float64          529,212  0.0
+  [124]  paging.pgdem                                   float64          529,212  0.0
+  [125]  io.tps                                         float64          529,212  3.96
+  [126]  io.io-reads.rtps                               float64          529,212  3.96
+  [127]  io.io-reads.bread                              float64          529,212  324.75
+  [128]  io.io-writes.wtps                              float64          529,212  0.0
+  [129]  io.io-writes.bwrtn                             float64          529,212  0.0
+  [130]  io.io-discard.dtps                             float64          529,212  0.0
+  [131]  io.io-discard.bdscd                            float64          529,212  0.0
+  [132]  memory.memfree                                 int64            529,212  467428
+  [133]  memory.avail                                   int64            529,212  448620
+  [134]  memory.memused                                 int64            529,212  53924
+  [135]  memory.memused-percent                         float64          529,212  10.73
+  [136]  memory.buffers                                 int64            529,212  1312
+  [137]  memory.cached                                  int64            529,212  12432
+  [138]  memory.commit                                  int64            529,212  7956
+  [139]  memory.commit-percent                          float64          529,212  1.58
+  [140]  memory.active                                  int64            529,212  10220
+  [141]  memory.inactive                                int64            529,212  5728
+  [142]  memory.dirty                                   int64            529,212  44
+  [143]  memory.shared                                  int64            529,212  0
+  [144]  memory.anonpg                                  int64            529,212  2204
+  [145]  memory.slab                                    int64            529,212  7476
+  [146]  memory.kstack                                  int64            529,212  592
+  [147]  memory.pgtbl                                   int64            529,212  772
+  [148]  memory.vmused                                  int64            529,212  7284
+  [149]  memory.swpfree                                 int64            529,212  0
+  [150]  memory.swpused                                 int64            529,212  0
+  [151]  memory.swpused-percent                         float64          529,212  0.0
+  [152]  memory.swpcad                                  int64            529,212  0
+  [153]  memory.swpcad-percent                          float64          529,212  0.0
+  [154]  hugepages.hugfree                              int64            529,212  0
+  [155]  hugepages.hugused                              int64            529,212  0
+  [156]  hugepages.hugused-percent                      float64          529,212  0.0
+  [157]  hugepages.hugrsvd                              int64            529,212  0
+  [158]  hugepages.hugsurp                              int64            529,212  0
+  [159]  kernel.dentunusd                               int64            529,212  2028
+  [160]  kernel.file-nr                                 int64            529,212  256
+  [161]  kernel.inode-nr                                int64            529,212  2542
+  [162]  kernel.pty-nr                                  int64            529,212  0
+  [163]  queue.runq-sz                                  int64            529,212  2
+  [164]  queue.plist-sz                                 int64            529,212  74
+  [165]  queue.ldavg-1                                  float64          529,212  1.3
+  [166]  queue.ldavg-5                                  float64          529,212  0.31
+  [167]  queue.ldavg-15                                 float64          529,212  0.1
+  [168]  queue.blocked                                  int64            529,212  0
+  [169]  serial[0].line                                 int64            529,212  0
+  [170]  serial[0].rcvin                                float64          529,212  0.0
+  [171]  serial[0].xmtin                                float64          529,212  105.94
+  [172]  serial[0].framerr                              float64          529,212  0.0
+  [173]  serial[0].prtyerr                              float64          529,212  0.0
+  [174]  serial[0].brk                                  float64          529,212  0.0
+  [175]  serial[0].ovrun                                float64          529,212  0.0
+  [176]  disk[0].disk-device                            str              529,212  sda
+  [177]  disk[0].tps                                    float64          529,212  3.96
+  [178]  disk[0].rd_sec                                 float64          529,212  324.75
+  [179]  disk[0].wr_sec                                 float64          529,212  0.0
+  [180]  disk[0].dc_sec                                 float64          529,212  0.0
+  [181]  disk[0].rkB                                    float64          529,212  162.38
+  [182]  disk[0].wkB                                    float64          529,212  0.0
+  [183]  disk[0].dkB                                    float64          529,212  0.0
+  [184]  disk[0].avgrq-sz                               float64          529,212  82.0
+  [185]  disk[0].areq-sz                                float64          529,212  41.0
+  [186]  disk[0].avgqu-sz                               float64          529,212  0.0
+  [187]  disk[0].aqu-sz                                 float64          529,212  0.0
+  [188]  disk[0].await                                  float64          529,212  0.25
+  [189]  disk[0].util-percent                           float64          529,212  0.0
+  [190]  network.net-dev[0].iface                       str              529,212  lo
+  [191]  network.net-dev[0].rxpck                       float64          529,212  0.0
+  [192]  network.net-dev[0].txpck                       float64          529,212  0.0
+  [193]  network.net-dev[0].rxkB                        float64          529,212  0.0
+  [194]  network.net-dev[0].txkB                        float64          529,212  0.0
+  [195]  network.net-dev[0].rxcmp                       float64          529,212  0.0
+  [196]  network.net-dev[0].txcmp                       float64          529,212  0.0
+  [197]  network.net-dev[0].rxmcst                      float64          529,212  0.0
+  [198]  network.net-dev[0].ifutil-percent              float64          529,212  0.0
+  [199]  network.net-dev[1].iface                       str              529,212  eth0
+  [200]  network.net-dev[1].rxpck                       float64          529,212  3.96
+  [201]  network.net-dev[1].txpck                       float64          529,212  2.97
+  [202]  network.net-dev[1].rxkB                        float64          529,212  0.84
+  [203]  network.net-dev[1].txkB                        float64          529,212  0.29
+  [204]  network.net-dev[1].rxcmp                       float64          529,212  0.0
+  [205]  network.net-dev[1].txcmp                       float64          529,212  0.0
+  [206]  network.net-dev[1].rxmcst                      float64          529,212  0.0
+  [207]  network.net-dev[1].ifutil-percent              float64          529,212  0.09
+  [208]  network.net-dev[2].iface                       str              529,210  br-lan
+  [209]  network.net-dev[2].rxpck                       float64          529,210  3.96
+  [210]  network.net-dev[2].txpck                       float64          529,210  2.97
+  [211]  network.net-dev[2].rxkB                        float64          529,210  0.78
+  [212]  network.net-dev[2].txkB                        float64          529,210  0.29
+  [213]  network.net-dev[2].rxcmp                       float64          529,210  0.0
+  [214]  network.net-dev[2].txcmp                       float64          529,210  0.0
+  [215]  network.net-dev[2].rxmcst                      float64          529,210  0.0
+  [216]  network.net-dev[2].ifutil-percent              float64          529,210  0.0
+  [217]  network.net-edev[0].iface                      str              529,212  lo
+  [218]  network.net-edev[0].rxerr                      float64          529,212  0.0
+  [219]  network.net-edev[0].txerr                      float64          529,212  0.0
+  [220]  network.net-edev[0].coll                       float64          529,212  0.0
+  [221]  network.net-edev[0].rxdrop                     float64          529,212  0.0
+  [222]  network.net-edev[0].txdrop                     float64          529,212  0.0
+  [223]  network.net-edev[0].txcarr                     float64          529,212  0.0
+  [224]  network.net-edev[0].rxfram                     float64          529,212  0.0
+  [225]  network.net-edev[0].rxfifo                     float64          529,212  0.0
+  [226]  network.net-edev[0].txfifo                     float64          529,212  0.0
+  [227]  network.net-edev[1].iface                      str              529,212  eth0
+  [228]  network.net-edev[1].rxerr                      float64          529,212  0.0
+  [229]  network.net-edev[1].txerr                      float64          529,212  0.0
+  [230]  network.net-edev[1].coll                       float64          529,212  0.0
+  [231]  network.net-edev[1].rxdrop                     float64          529,212  0.0
+  [232]  network.net-edev[1].txdrop                     float64          529,212  0.0
+  [233]  network.net-edev[1].txcarr                     float64          529,212  0.0
+  [234]  network.net-edev[1].rxfram                     float64          529,212  0.0
+  [235]  network.net-edev[1].rxfifo                     float64          529,212  0.0
+  [236]  network.net-edev[1].txfifo                     float64          529,212  0.0
+  [237]  network.net-edev[2].iface                      str              529,209  br-lan
+  [238]  network.net-edev[2].rxerr                      float64          529,209  0.0
+  [239]  network.net-edev[2].txerr                      float64          529,209  0.0
+  [240]  network.net-edev[2].coll                       float64          529,209  0.0
+  [241]  network.net-edev[2].rxdrop                     float64          529,209  0.0
+  [242]  network.net-edev[2].txdrop                     float64          529,209  0.0
+  [243]  network.net-edev[2].txcarr                     float64          529,209  0.0
+  [244]  network.net-edev[2].rxfram                     float64          529,209  0.0
+  [245]  network.net-edev[2].rxfifo                     float64          529,209  0.0
+  [246]  network.net-edev[2].txfifo                     float64          529,209  0.0
+  [247]  network.net-nfs.call                           float64          529,212  0.0
+  [248]  network.net-nfs.retrans                        float64          529,212  0.0
+  [249]  network.net-nfs.read                           float64          529,212  0.0
+  [250]  network.net-nfs.write                          float64          529,212  0.0
+  [251]  network.net-nfs.access                         float64          529,212  0.0
+  [252]  network.net-nfs.getatt                         float64          529,212  0.0
+  [253]  network.net-nfsd.scall                         float64          529,212  0.0
+  [254]  network.net-nfsd.badcall                       float64          529,212  0.0
+  [255]  network.net-nfsd.packet                        float64          529,212  0.0
+  [256]  network.net-nfsd.udp                           float64          529,212  0.0
+  [257]  network.net-nfsd.tcp                           float64          529,212  0.0
+  [258]  network.net-nfsd.hit                           float64          529,212  0.0
+  [259]  network.net-nfsd.miss                          float64          529,212  0.0
+  [260]  network.net-nfsd.sread                         float64          529,212  0.0
+  [261]  network.net-nfsd.swrite                        float64          529,212  0.0
+  [262]  network.net-nfsd.saccess                       float64          529,212  0.0
+  [263]  network.net-nfsd.sgetatt                       float64          529,212  0.0
+  [264]  network.net-sock.totsck                        int64            529,212  42
+  [265]  network.net-sock.tcpsck                        int64            529,212  3
+  [266]  network.net-sock.udpsck                        int64            529,212  2
+  [267]  network.net-sock.rawsck                        int64            529,212  0
+  [268]  network.net-sock.ip-frag                       int64            529,212  0
+  [269]  network.net-sock.tcp-tw                        int64            529,212  1
+  [270]  network.net-ip.irec                            float64          529,212  1.98
+  [271]  network.net-ip.fwddgm                          float64          529,212  0.0
+  [272]  network.net-ip.idel                            float64          529,212  0.0
+  [273]  network.net-ip.orq                             float64          529,212  0.0
+  [274]  network.net-ip.asmrq                           float64          529,212  0.0
+  [275]  network.net-ip.asmok                           float64          529,212  0.0
+  [276]  network.net-ip.fragok                          float64          529,212  0.0
+  [277]  network.net-ip.fragcrt                         float64          529,212  0.0
+  [278]  network.net-eip.ihdrerr                        float64          529,212  0.0
+  [279]  network.net-eip.iadrerr                        float64          529,212  0.0
+  [280]  network.net-eip.iukwnpr                        float64          529,212  0.0
+  [281]  network.net-eip.idisc                          float64          529,212  0.0
+  [282]  network.net-eip.odisc                          float64          529,212  0.0
+  [283]  network.net-eip.onort                          float64          529,212  0.0
+  [284]  network.net-eip.asmf                           float64          529,212  0.0
+  [285]  network.net-eip.fragf                          float64          529,212  0.0
+  [286]  network.net-icmp.imsg                          float64          529,212  0.0
+  [287]  network.net-icmp.omsg                          float64          529,212  0.0
+  [288]  network.net-icmp.iech                          float64          529,212  0.0
+  [289]  network.net-icmp.iechr                         float64          529,212  0.0
+  [290]  network.net-icmp.oech                          float64          529,212  0.0
+  [291]  network.net-icmp.oechr                         float64          529,212  0.0
+  [292]  network.net-icmp.itm                           float64          529,212  0.0
+  [293]  network.net-icmp.itmr                          float64          529,212  0.0
+  [294]  network.net-icmp.otm                           float64          529,212  0.0
+  [295]  network.net-icmp.otmr                          float64          529,212  0.0
+  [296]  network.net-icmp.iadrmk                        float64          529,212  0.0
+  [297]  network.net-icmp.iadrmkr                       float64          529,212  0.0
+  [298]  network.net-icmp.oadrmk                        float64          529,212  0.0
+  [299]  network.net-icmp.oadrmkr                       float64          529,212  0.0
+  [300]  network.net-eicmp.ierr                         float64          529,212  0.0
+  [301]  network.net-eicmp.oerr                         float64          529,212  0.0
+  [302]  network.net-eicmp.idstunr                      float64          529,212  0.0
+  [303]  network.net-eicmp.odstunr                      float64          529,212  0.0
+  [304]  network.net-eicmp.itmex                        float64          529,212  0.0
+  [305]  network.net-eicmp.otmex                        float64          529,212  0.0
+  [306]  network.net-eicmp.iparmpb                      float64          529,212  0.0
+  [307]  network.net-eicmp.oparmpb                      float64          529,212  0.0
+  [308]  network.net-eicmp.isrcq                        float64          529,212  0.0
+  [309]  network.net-eicmp.osrcq                        float64          529,212  0.0
+  [310]  network.net-eicmp.iredir                       float64          529,212  0.0
+  [311]  network.net-eicmp.oredir                       float64          529,212  0.0
+  [312]  network.net-tcp.active                         float64          529,212  0.0
+  [313]  network.net-tcp.passive                        float64          529,212  0.0
+  [314]  network.net-tcp.iseg                           float64          529,212  0.0
+  [315]  network.net-tcp.oseg                           float64          529,212  0.0
+  [316]  network.net-etcp.atmptf                        float64          529,212  0.0
+  [317]  network.net-etcp.estres                        float64          529,212  0.0
+  [318]  network.net-etcp.retrseg                       float64          529,212  0.0
+  [319]  network.net-etcp.isegerr                       float64          529,212  0.0
+  [320]  network.net-etcp.orsts                         float64          529,212  0.0
+  [321]  network.net-udp.idgm                           float64          529,212  0.0
+  [322]  network.net-udp.odgm                           float64          529,212  0.0
+  [323]  network.net-udp.noport                         float64          529,212  0.0
+  [324]  network.net-udp.idgmerr                        float64          529,212  0.0
+  [325]  network.net-sock6.tcp6sck                      int64            529,212  3
+  [326]  network.net-sock6.udp6sck                      int64            529,212  2
+  [327]  network.net-sock6.raw6sck                      int64            529,212  0
+  [328]  network.net-sock6.ip6-frag                     int64            529,212  0
+  [329]  network.net-ip6.irec6                          float64          529,212  0.0
+  [330]  network.net-ip6.fwddgm6                        float64          529,212  0.0
+  [331]  network.net-ip6.idel6                          float64          529,212  0.0
+  [332]  network.net-ip6.orq6                           float64          529,212  0.0
+  [333]  network.net-ip6.asmrq6                         float64          529,212  0.0
+  [334]  network.net-ip6.asmok6                         float64          529,212  0.0
+  [335]  network.net-ip6.imcpck6                        float64          529,212  0.0
+  [336]  network.net-ip6.omcpck6                        float64          529,212  0.0
+  [337]  network.net-ip6.fragok6                        float64          529,212  0.0
+  [338]  network.net-ip6.fragcr6                        float64          529,212  0.0
+  [339]  network.net-eip6.ihdrer6                       float64          529,212  0.0
+  [340]  network.net-eip6.iadrer6                       float64          529,212  0.0
+  [341]  network.net-eip6.iukwnp6                       float64          529,212  0.0
+  [342]  network.net-eip6.i2big6                        float64          529,212  0.0
+  [343]  network.net-eip6.idisc6                        float64          529,212  0.0
+  [344]  network.net-eip6.odisc6                        float64          529,212  0.0
+  [345]  network.net-eip6.inort6                        float64          529,212  0.0
+  [346]  network.net-eip6.onort6                        float64          529,212  0.0
+  [347]  network.net-eip6.asmf6                         float64          529,212  0.0
+  [348]  network.net-eip6.fragf6                        float64          529,212  0.0
+  [349]  network.net-eip6.itrpck6                       float64          529,212  0.0
+  [350]  network.net-icmp6.imsg6                        float64          529,212  0.0
+  [351]  network.net-icmp6.omsg6                        float64          529,212  0.0
+  [352]  network.net-icmp6.iech6                        float64          529,212  0.0
+  [353]  network.net-icmp6.iechr6                       float64          529,212  0.0
+  [354]  network.net-icmp6.oechr6                       float64          529,212  0.0
+  [355]  network.net-icmp6.igmbq6                       float64          529,212  0.0
+  [356]  network.net-icmp6.igmbr6                       float64          529,212  0.0
+  [357]  network.net-icmp6.ogmbr6                       float64          529,212  0.0
+  [358]  network.net-icmp6.igmbrd6                      float64          529,212  0.0
+  [359]  network.net-icmp6.ogmbrd6                      float64          529,212  0.0
+  [360]  network.net-icmp6.irtsol6                      float64          529,212  0.0
+  [361]  network.net-icmp6.ortsol6                      float64          529,212  0.0
+  [362]  network.net-icmp6.irtad6                       float64          529,212  0.0
+  [363]  network.net-icmp6.inbsol6                      float64          529,212  0.0
+  [364]  network.net-icmp6.onbsol6                      float64          529,212  0.0
+  [365]  network.net-icmp6.inbad6                       float64          529,212  0.0
+  [366]  network.net-icmp6.onbad6                       float64          529,212  0.0
+  [367]  network.net-eicmp6.ierr6                       float64          529,212  0.0
+  [368]  network.net-eicmp6.idtunr6                     float64          529,212  0.0
+  [369]  network.net-eicmp6.odtunr6                     float64          529,212  0.0
+  [370]  network.net-eicmp6.itmex6                      float64          529,212  0.0
+  [371]  network.net-eicmp6.otmex6                      float64          529,212  0.0
+  [372]  network.net-eicmp6.iprmpb6                     float64          529,212  0.0
+  [373]  network.net-eicmp6.oprmpb6                     float64          529,212  0.0
+  [374]  network.net-eicmp6.iredir6                     float64          529,212  0.0
+  [375]  network.net-eicmp6.oredir6                     float64          529,212  0.0
+  [376]  network.net-eicmp6.ipck2b6                     float64          529,212  0.0
+  [377]  network.net-eicmp6.opck2b6                     float64          529,212  0.0
+  [378]  network.net-udp6.idgm6                         float64          529,212  0.0
+  [379]  network.net-udp6.odgm6                         float64          529,212  0.0
+  [380]  network.net-udp6.noport6                       float64          529,212  0.0
+  [381]  network.net-udp6.idgmer6                       float64          529,212  0.0
+  [382]  network.softnet[0].cpu                         str              529,212  all
+  [383]  network.softnet[0].total                       float64          529,212  3.96
+  [384]  network.softnet[0].dropd                       float64          529,212  0.0
+  [385]  network.softnet[0].squeezd                     float64          529,212  0.0
+  [386]  network.softnet[0].rx_rps                      float64          529,212  0.0
+  [387]  network.softnet[0].flw_lim                     float64          529,212  0.0
+  [388]  network.softnet[0].blg_len                     int64            529,212  0
+  [389]  network.softnet[1].cpu                         int64            529,212  0
+  [390]  network.softnet[1].total                       float64          529,212  3.96
+  [391]  network.softnet[1].dropd                       float64          529,212  0.0
+  [392]  network.softnet[1].squeezd                     float64          529,212  0.0
+  [393]  network.softnet[1].rx_rps                      float64          529,212  0.0
+  [394]  network.softnet[1].flw_lim                     float64          529,212  0.0
+  [395]  network.softnet[1].blg_len                     int64            529,212  0
+  [396]  power-management.cpu-frequency[0].number       str              529,212  all
+  [397]  power-management.cpu-frequency[0].frequency    float64          529,212  3407.98
+  [398]  power-management.cpu-frequency[1].number       int64            529,212  0
+  [399]  power-management.cpu-frequency[1].frequency    float64          529,212  3407.98
+  [400]  filesystems[0].filesystem                      str              529,212  /dev/root
+  [401]  filesystems[0].MBfsfree                        int64            529,212  79
+  [402]  filesystems[0].MBfsused                        int64            529,212  19
+  [403]  filesystems[0].%fsused                         float64          529,212  19.45
+  [404]  filesystems[0].%ufsused                        float64          529,212  21.56
+  [405]  filesystems[0].Ifree                           int64            529,212  5659
+  [406]  filesystems[0].Iused                           int64            529,212  997
+  [407]  filesystems[0].%Iused                          float64          529,212  14.98
+  [408]  Hash                                           str              529,212  85f4c8ed3d1640f8b9ddc5722
+  [409]  MalwareFamily                                  str              529,212  Benign
+  [410]  Arch                                           str              529,212  x86
+
+
+=================================================================
+  CHECKLIST — review before running phase1_preprocess.py
+=================================================================
+
+  1. Confirm LABEL_COL = 'MalwareFamily' matches your actual label column name.
+     Update it at the top of both this script and phase1_preprocess.py.
+
+  2. PCAP — note any identifier/leakage columns:
+       src_ip, dst_ip, src_port, dst_port, timestamp,
+       flow_id, src_mac, dst_mac, or similar.
+     Add them to PCAP_DROP_COLS in phase1_preprocess.py.
+
+  3. SAR — confirm resource metric columns exist with keywords:
+       cpu, mem, io, load, swap, net
+     If your column names differ, add keywords to SAR_FEATURE_KEYWORDS.
+
+  Next step:  python phase1_preprocess.py
+
