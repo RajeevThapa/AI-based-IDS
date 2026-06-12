@@ -70,6 +70,8 @@ SAR_FEATURE_KEYWORDS = [
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
 
+# Opens CSV, reads into table, cleans column names
+
 def load_csv(path: str, name: str) -> pd.DataFrame:
     """Load CSV, strip column name whitespace, report shape."""
     if not os.path.exists(path):
@@ -83,6 +85,7 @@ def load_csv(path: str, name: str) -> pd.DataFrame:
     print(f"  Loaded  {len(df):,} rows  {df.shape[1]} columns")
     return df
 
+# Converts text labels ("Mirai") → numbers (0,1,2...), saves mapping to JSON
 
 def fit_label_encoder(series: pd.Series) -> LabelEncoder:
     """Fit LabelEncoder and save int → class name mapping to JSON."""
@@ -98,6 +101,7 @@ def fit_label_encoder(series: pd.Series) -> LabelEncoder:
     print(f"  Saved: {path}")
     return le
 
+# Oversamples minority classes on training data
 
 def apply_smote(X: np.ndarray, y: np.ndarray, name: str):
     """Oversample minority classes on the training set."""
@@ -119,6 +123,8 @@ def apply_smote(X: np.ndarray, y: np.ndarray, name: str):
     print(f"  SMOTE [{name}] after : {after}")
     return X_res, y_res
 
+
+# Saves train/test CSVs
 
 def save_csv(X_tr, X_te, y_tr, y_te, name: str, feature_names: list):
     """Save train/test splits as CSV files."""
@@ -155,6 +161,8 @@ def save_csv(X_tr, X_te, y_tr, y_te, name: str, feature_names: list):
 
 #     y_raw = df[LABEL_COL].astype(str)
 #     X = df.drop(columns=[LABEL_COL])
+
+# Cleans PCAP data: drop leakage, numeric only, impute, split, SMOTE, scale
 
 def preprocess_pcap(df: pd.DataFrame, le: LabelEncoder):
     print(f"\n  Input shape : {df.shape}")
@@ -215,6 +223,8 @@ def preprocess_pcap(df: pd.DataFrame, le: LabelEncoder):
 
 
 # ── SAR PREPROCESSING ─────────────────────────────────────────────────────────
+
+# Cleans SAR data: select resource columns by keyword, same cleaning pipeline
 
 def preprocess_sar(df: pd.DataFrame, le: LabelEncoder):
     print(f"\n  Input shape : {df.shape}")
