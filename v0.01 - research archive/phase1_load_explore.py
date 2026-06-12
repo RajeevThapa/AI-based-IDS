@@ -27,6 +27,8 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ── HELPERS ───────────────────────────────────────────────────────────────────
 
+# Opens CSV file, reads it into a table, cleans column names
+
 def load_csv(path: str, name: str) -> pd.DataFrame:
     if not os.path.exists(path):
         print(f"  [!] File not found: {path}")
@@ -38,6 +40,7 @@ def load_csv(path: str, name: str) -> pd.DataFrame:
     print(f"  Done — {len(df):,} rows  {df.shape[1]} columns")
     return df
 
+# Prints: how big the data is, how much is missing, how many samples per malware family
 
 def summarise(df: pd.DataFrame, name: str):
     print(f"\n{'─'*65}")
@@ -81,6 +84,7 @@ def summarise(df: pd.DataFrame, name: str):
         print(f"      Update LABEL_COL in this script.")
         print(f"      Candidate columns: {[c for c in df.columns if 'label' in c.lower() or 'class' in c.lower() or 'type' in c.lower() or 'family' in c.lower()]}")
 
+# Lists every column name with its type and a sample value
 
 def print_columns(df: pd.DataFrame, name: str):
     print(f"\n  All columns — {name}  ({len(df.columns)} total)")
@@ -96,6 +100,7 @@ def print_columns(df: pd.DataFrame, name: str):
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 
+# Runs everything in order: load → summarize → print columns → show checklist
 if __name__ == "__main__":
 
     base = os.path.join(DATASET_ROOT, ARCH)
