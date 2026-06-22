@@ -145,6 +145,3 @@ Runs prediction on an individual sample.
 - The fused model (`rf_fused_v2.pkl`) provides the highest detection accuracy by combining PCAP and SAR features.
 
 ---
-
-## License
-
