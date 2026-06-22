@@ -8,7 +8,7 @@ The protection of IoT devices remains difficult because these devices have limit
 <img width="2062" height="666" alt="scenario_comparison_updated" src="https://github.com/user-attachments/assets/192fb13a-0c91-4e81-843e-27d7d76ac65a" />
 
 ## System Architecture Design
-<img width="1024" height="768" alt="System architecture diagram" src="https://github.com/user-attachments/assets/d74b2007-5398-45fc-a918-d99b5f26ae09" />
+<img width="1024" height="768" alt="System architecture diagram(1)" src="https://github.com/user-attachments/assets/7a6bb93a-24b5-46c1-911d-23dd1fd10ca0" />
 
 ## Missing Files
 
