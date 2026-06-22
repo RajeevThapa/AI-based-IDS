@@ -1,4 +1,14 @@
-# AI Based Intrusion Detection for IoT
+# AI Based Intrusion Detection for IoT Networks
+The protection of IoT devices remains difficult because these devices have limited resources and receive insufficient security updates and they form extensive network connections. The current IDS solutions operate by analyzing network and host telemetry separately while they generate passive security alerts. This thesis develops the AIDR framework which operates as a closed-loop Perception–Reasoning–Action system. The Perception Layer uses feature- The system applies combined network and host telemetry data to identify malware threats while it produces a confidence level for each detection. The Reasoning Layer evaluates The system evaluates operational risk through its Reasoning Layer which adjusts detection thresholds based on inputs from system administrators. The Action Layer automatically enforces mitigation and the system uses kernel-level controls to automatically implement its defense mechanisms. The system aims to achieve better detection performance while decreasing reaction times and enabling self-defense mechanisms which work well with IoT edge devices.
+
+## Preprocesssing Pipeline
+<img width="599" height="861" alt="preprocessing_pipeline_clean" src="https://github.com/user-attachments/assets/1df305ec-16c4-4b06-a066-d4ac8a2bf341" />
+
+## Scenarios Comparision
+<img width="2062" height="666" alt="scenario_comparison_updated" src="https://github.com/user-attachments/assets/192fb13a-0c91-4e81-843e-27d7d76ac65a" />
+
+## System Architecture Design
+<img width="1024" height="768" alt="System architecture diagram" src="https://github.com/user-attachments/assets/d74b2007-5398-45fc-a918-d99b5f26ae09" />
 
 ## Missing Files
 
@@ -33,7 +43,7 @@ outputs/fused_pcap_test.csv
 
 ## Dataset Requirements
 
-Place the required dataset files in:
+Place the CIC-YNU-IoTMal dataset files in:
 
 ```
 dataset/x86/
